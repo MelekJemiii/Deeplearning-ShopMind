@@ -37,6 +37,7 @@ class Block:
     kind: str          # heading | para | table
     text: str
     level: int = 0     # heading level
+    prefix: str = ""   # heading lines glued to this block (strategy B)
 
 
 @dataclass
@@ -127,12 +128,16 @@ def _split_table(table: str, max_t: int, tok: Tokenizer) -> list[str]:
 def _units(blocks: list[Block], max_t: int, tok: Tokenizer) -> list[str]:
     units = []
     for b in blocks:
-        if tok.count(b.text) <= max_t:
-            units.append(b.text)
+        room = max_t - (tok.count(b.prefix) + 2 if b.prefix else 0)
+        if tok.count(b.text) <= room:
+            parts = [b.text]
         elif b.kind == "table":
-            units.extend(_split_table(b.text, max_t, tok))
+            parts = _split_table(b.text, room, tok)
         else:
-            units.extend(_split_text(b.text, max_t, tok))
+            parts = _split_text(b.text, room, tok)
+        if b.prefix:
+            parts[0] = f"{b.prefix}\n\n{parts[0]}"  # headings travel with the first piece of their content
+        units.extend(parts)
     return units
 
 
@@ -177,13 +182,29 @@ def _common_prefix(a: list[str], b: list[str]) -> list[str]:
     return out
 
 
+def _glue_headings(blocks: list[Block]) -> list[Block]:
+    """Attach heading lines to the block that follows them, so a chunk never ends on a bare heading."""
+    out, heads = [], []
+    for b in blocks:
+        if b.kind == "heading":
+            heads.append(b.text)
+        else:
+            out.append(Block(b.kind, b.text, prefix="\n\n".join(heads)) if heads else b)
+            heads = []
+    if heads and out:
+        out[-1] = Block(out[-1].kind, out[-1].text, prefix=out[-1].prefix)  # trailing headings: no content, dropped
+    return out
+
+
 def chunk_headings(md: str, cfg: dict, tok: Tokenizer, doc_title: str) -> list[Chunk]:
     max_t, min_t, ovl = cfg["max_tokens"], cfg["min_tokens"], cfg["overlap_tokens"]
+
+    # 1) sections: heading path + blocks
     sections, stack, cur = [], [], None  # stack: [(level, title)]
     for b in parse_blocks(md):
         if b.kind == "heading":
             level, title = b.level, clean_heading(HEADING.match(b.text).group(2))
-            if level == 1 and not sections and cur is None and not stack:
+            if level == 1 and not sections and not stack:
                 continue  # document title line: already in doc_title
             stack = [s for s in stack if s[0] < level] + [(level, title)]
             cur = {"path": [doc_title] + [t for _, t in stack], "blocks": [b]}
@@ -193,25 +214,35 @@ def chunk_headings(md: str, cfg: dict, tok: Tokenizer, doc_title: str) -> list[C
                 cur = {"path": [doc_title], "blocks": []}; sections.append(cur)
             cur["blocks"].append(b)
 
-    # merge small sections forward (keeping their heading lines inside the text)
-    merged, buf = [], None
+    # 2) heading-only sections (parent whose content is all in sub-sections) carried into the next one
+    folded, pending = [], None
     for s in sections:
-        if buf is None:
-            buf = {"path": s["path"], "blocks": list(s["blocks"])}
-        elif tok.count("\n\n".join(x.text for x in buf["blocks"] + s["blocks"])) <= max_t and \
-                tok.count("\n\n".join(x.text for x in buf["blocks"])) < min_t:
-            buf["blocks"].extend(s["blocks"])
-            buf["path"] = _common_prefix(buf["path"], s["path"])  # path must be true for ALL merged sections
-        else:
-            merged.append(buf); buf = {"path": s["path"], "blocks": list(s["blocks"])}
-    if buf:
-        merged.append(buf)
+        if all(b.kind == "heading" for b in s["blocks"]):
+            pending = pending or {"path": s["path"], "blocks": []}
+            pending["blocks"].extend(s["blocks"]); continue
+        if pending:
+            s = {"path": _common_prefix(pending["path"], s["path"]), "blocks": pending["blocks"] + s["blocks"]}
+            pending = None
+        folded.append(s)
 
-    chunks = []
-    for s in merged:
-        prefix = " > ".join(s["path"])
-        budget = max_t - tok.count(prefix) - 2
-        content = [b for b in s["blocks"] if b.kind != "heading" or len(s["blocks"]) > 1]
-        for piece in pack(content, budget, ovl, tok):
-            chunks.append(Chunk(f"{prefix}\n\n{piece}", s["path"]))
-    return chunks
+    # 3) pack each section into pieces (path, body) within the budget left by its prefix
+    pieces = []
+    for s in folded:
+        budget = max_t - tok.count(" > ".join(s["path"])) - 2
+        for body in pack(_glue_headings(s["blocks"]), budget, ovl, tok):
+            pieces.append({"path": s["path"], "body": body})
+
+    # 4) merge small pieces with a neighbour (backward first, then forward) while the result fits
+    render = lambda p: f"{' > '.join(p['path'])}\n\n{p['body']}"  # noqa: E731
+
+    def join(a, b):
+        return {"path": _common_prefix(a["path"], b["path"]), "body": f"{a['body']}\n\n{b['body']}"}
+
+    merged = []
+    for p in pieces:
+        if merged and (tok.count(render(merged[-1])) < min_t or tok.count(render(p)) < min_t) \
+                and tok.count(render(join(merged[-1], p))) <= max_t:
+            merged[-1] = join(merged[-1], p)  # common path: must be true for everything inside
+        else:
+            merged.append(p)
+    return [Chunk(render(p), p["path"]) for p in merged]
