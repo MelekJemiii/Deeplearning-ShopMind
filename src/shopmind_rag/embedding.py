@@ -48,6 +48,36 @@ class EmbeddingCache:
                 f.write(json.dumps({"k": k, "v": v}) + "\n")
 
 
+class DailyQuotaExceeded(RuntimeError):
+    """Requests-per-day quota reached: retrying today is pointless (resets at midnight Pacific Time)."""
+
+
+class RateLimiter:
+    """Sliding 60 s window over texts and (estimated) tokens sent."""
+
+    def __init__(self, rpm: int, tpm: int, window_s: float = 60.0):
+        self.rpm, self.tpm, self.window = rpm, tpm, window_s
+        self.events: list[tuple[float, int, int]] = []  # (time, n_texts, n_tokens)
+
+    def wait(self, n_texts: int, n_tokens: int):
+        while True:
+            now = time.monotonic()
+            self.events = [e for e in self.events if now - e[0] < self.window]
+            used_r = sum(e[1] for e in self.events)
+            used_t = sum(e[2] for e in self.events)
+            if used_r + n_texts <= self.rpm and used_t + n_tokens <= self.tpm:
+                self.events.append((now, n_texts, n_tokens))
+                return
+            wait = self.window - (now - self.events[0][0]) + 0.1
+            log.info("  throttling %.0fs (window: %d texts, %d tokens)", wait, used_r, used_t)
+            time.sleep(wait)
+
+
+def estimate_tokens(text: str) -> int:
+    # ~4 chars/token for EN/FR, +20% margin: the limiter must err on the safe side
+    return int(len(text) / 4 * 1.2) + 1
+
+
 class Embedder:
     provider = "base"
 
@@ -55,6 +85,9 @@ class Embedder:
         self.model, self.dims = CFG["model"], CFG["dimensions"]
         self.cache = EmbeddingCache(self.provider, self.model, self.dims)
         self.api_calls = 0
+        rl = CFG.get("rate_limit") or {}
+        self.limiter = RateLimiter(rl.get("requests_per_minute", 10**9), rl.get("tokens_per_minute", 10**12)) \
+            if self.provider != "fake" else None
 
     # ----- formatting (task instructions for gemini-embedding-2) -----
     def format_document(self, title: str, text: str) -> str:
@@ -77,6 +110,8 @@ class Embedder:
         bs = CFG["batch_size"]
         for i in range(0, len(todo), bs):
             batch = todo[i:i + bs]
+            if self.limiter:
+                self.limiter.wait(len(batch), sum(estimate_tokens(t) for t in batch))
             vecs = self._call_with_retry(batch)
             if len(vecs) != len(batch):  # guard: gemini-embedding-2 can AGGREGATE inputs into one vector
                 raise RuntimeError(f"expected {len(batch)} embeddings, got {len(vecs)}")
@@ -91,7 +126,9 @@ class Embedder:
                 self.api_calls += 1
                 return self._call(batch)
             except Exception as e:  # rate limit / transient server errors -> exponential backoff
-                code = getattr(e, "code", None)
+                code, msg = getattr(e, "code", None), str(e)
+                if "PerDay" in msg or "per day" in msg.lower():
+                    raise DailyQuotaExceeded(msg[:300]) from e
                 if code in (429, 500, 502, 503, 504) or "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
                     wait = min(60, 5 * 2 ** (attempt - 1))
                     log.warning("API %s, retry in %ss (attempt %d/%d)", code or "error", wait, attempt,

@@ -15,7 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from shopmind_rag.config import ROOT, SETTINGS  # noqa: E402
-from shopmind_rag.embedding import get_embedder  # noqa: E402
+from shopmind_rag.embedding import DailyQuotaExceeded, get_embedder  # noqa: E402
 from shopmind_rag.logging_utils import get_logger  # noqa: E402
 from shopmind_rag.vectorstore import collection_name, get_client, recreate, search, upsert  # noqa: E402
 
@@ -33,7 +33,14 @@ def main():
             continue
         path = ROOT / SETTINGS["chunking"]["output_dir"] / f"chunks_{s}.jsonl"
         chunks = [json.loads(line) for line in open(path, encoding="utf-8")]
-        vectors = emb.embed_documents([(c["title"], c["text"]) for c in chunks])
+        try:
+            vectors = emb.embed_documents([(c["title"], c["text"]) for c in chunks])
+        except DailyQuotaExceeded:
+            cached = sum(emb.cache.get(emb.format_document(c["title"], c["text"])) is not None for c in chunks)
+            log.error("[%s] DAILY embedding quota reached: %d/%d chunks embedded and cached. "
+                      "Quota resets at midnight Pacific Time; rerun then, cached chunks are not re-sent.",
+                      s, cached, len(chunks))
+            sys.exit(2)
         name = collection_name(s)
         recreate(client, name, emb.dims)
         upsert(client, name, chunks, vectors)

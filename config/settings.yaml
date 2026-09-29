@@ -71,6 +71,12 @@ embedding:
   query_format: "task: question answering | query: {query}"
   batch_size: 20
   max_retries: 6
+  # Client-side throttling BELOW the API quota, so we never trigger 429 storms.
+  # Free tier (Gemini Embedding): 100 RPM, 30,000 TPM, 1,000 RPD per project; each text counts as a request.
+  # Paid Tier 1 is far higher: raise these if billing is enabled.
+  rate_limit:
+    requests_per_minute: 90
+    tokens_per_minute: 27000
   cache_dir: data/embeddings       # vectors cached by hash(model, dims, input): reruns cost nothing
 vector_store:
   collection_prefix: shopmind_kb   # one collection per chunking strategy: shopmind_kb_A, shopmind_kb_B
