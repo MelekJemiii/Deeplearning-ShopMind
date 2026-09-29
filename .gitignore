@@ -15,6 +15,7 @@ data/embeddings/**
 # Docker volumes
 qdrant_storage/
 n8n_data/
+ollama_data/
 # OS / IDE
 .DS_Store
 Thumbs.db

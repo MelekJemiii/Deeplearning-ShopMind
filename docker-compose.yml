@@ -9,6 +9,22 @@ services:
     environment:
       - QDRANT__SERVICE__API_KEY=${QDRANT_API_KEY:-}
 
+  ollama:
+    image: ollama/ollama:${OLLAMA_VERSION:-latest}
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./ollama_data:/root/.ollama     # downloaded models persist across restarts
+    # NVIDIA GPU (needs an NVIDIA driver on the host). Remove this block to run on CPU only.
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
   n8n:
     image: n8nio/n8n:${N8N_VERSION:-latest}
     restart: unless-stopped
@@ -22,4 +38,5 @@ services:
       - TZ=${GENERIC_TIMEZONE:-Africa/Tunis}
     depends_on:
       - qdrant
-# Inside n8n, reach Qdrant at http://qdrant:6333 (service name), not localhost.
+      - ollama
+# Inside n8n, reach services by name: Qdrant http://qdrant:6333, Ollama http://ollama:11434 (not localhost).

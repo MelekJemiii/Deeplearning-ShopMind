@@ -6,8 +6,9 @@ Output: Qdrant collections shopmind_kb_<S> (vectors + full chunk payload, keywor
         embeddings cached in data/embeddings/ (rerunning costs nothing)
 Ends with a sanity check: one test query per strategy, top-3 printed.
 
-Prerequisites: docker compose up -d qdrant ; GEMINI_API_KEY and QDRANT_URL in .env
+Prerequisites: docker compose up -d qdrant ollama ; docker compose exec ollama ollama pull bge-m3
 Usage: python scripts/07_embed_index.py [--strategy A]
+       set EMBEDDING_PROVIDER=gemini  (Windows)  to index with another provider
 """
 import json
 import sys
@@ -41,7 +42,7 @@ def main():
                       "Quota resets at midnight Pacific Time; rerun then, cached chunks are not re-sent.",
                       s, cached, len(chunks))
             sys.exit(2)
-        name = collection_name(s)
+        name = collection_name(s, emb.provider)
         recreate(client, name, emb.dims)
         upsert(client, name, chunks, vectors)
         count = client.count(name).count

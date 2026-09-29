@@ -5,6 +5,7 @@ Technical knowledge base + retrieval for the ShopMind AI multi-agent assistant.
 ## Stack
 - Python 3.11+ (ingestion, chunking, evaluation)
 - Qdrant (vector store) — Docker
+- Ollama + bge-m3 (local embeddings) — Docker
 - n8n (orchestration) — Docker
 
 ## Setup
@@ -13,7 +14,8 @@ python -m venv .venv
 .venv\Scripts\activate          # Windows  (Linux/Mac: source .venv/bin/activate)
 pip install -r requirements.txt
 copy .env.example .env          # then fill in the values
-docker compose up -d            # starts Qdrant + n8n
+docker compose up -d            # starts Qdrant + Ollama + n8n
+docker compose exec ollama ollama pull bge-m3   # once: download the embedding model
 ```
 - Qdrant dashboard: http://localhost:6333/dashboard
 - n8n: http://localhost:5678
@@ -27,7 +29,7 @@ docker compose up -d            # starts Qdrant + n8n
 | 2. Validate test set | `python scripts/04_validate_testset.py` | checks `eval/test_queries.yaml` labels |
 | 3. Clean | `python scripts/05_clean.py` then `python scripts/04_validate_testset.py --processed` | `data/processed/*.md`, `cleaning_report.csv` |
 | 4. Chunk (A + B) | `python scripts/06_chunk.py` | `data/chunks/chunks_{A,B}.jsonl`, `stats_{A,B}.json` |
-| 5. Embed + index | `docker compose up -d qdrant` then `python scripts/07_embed_index.py` | Qdrant collections `shopmind_kb_A`, `shopmind_kb_B` |
+| 5. Embed + index | `python scripts/07_embed_index.py` | Qdrant collections `shopmind_kb_<provider>_<A|B>` |
 | 6. Evaluate | *(next step)* | |
 | 3. Chunk | *(next step)* | `data/processed/` |
 | 4. Embed + index | *(next step)* | Qdrant collections |

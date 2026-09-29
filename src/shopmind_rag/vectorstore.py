@@ -15,8 +15,9 @@ def get_client() -> QdrantClient:
     return QdrantClient(url=url, api_key=env("QDRANT_API_KEY", required=False) or None)
 
 
-def collection_name(strategy: str) -> str:
-    return f"{CFG['collection_prefix']}_{strategy}"
+def collection_name(strategy: str, provider: str) -> str:
+    # provider in the name: collections built with different embedding models can coexist and be compared
+    return f"{CFG['collection_prefix']}_{provider}_{strategy}"
 
 
 def point_id(chunk_id: str) -> str:
