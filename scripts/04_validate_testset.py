@@ -7,6 +7,10 @@ Checks for every query:
   - at least one evidence phrase really appears in that document (normalized match)
   - out_of_scope queries have no relevant docs, other types have at least one
 Exit code 1 if any error, so it can run in CI later.
+
+Usage:
+  python scripts/04_validate_testset.py              # check labels against data/markdown (raw)
+  python scripts/04_validate_testset.py --processed  # check evidence survived cleaning (data/processed)
 """
 import csv
 import sys
@@ -28,7 +32,8 @@ def main():
     qs = yaml.safe_load(open(ROOT / "eval" / "test_queries.yaml", encoding="utf-8"))["queries"]
     with open(path("metadata_csv"), encoding="utf-8") as f:
         meta_ids = {r["doc_id"] for r in csv.DictReader(f)}
-    md_dir = path("markdown_dir")
+    md_dir = path("processed_dir") if "--processed" in sys.argv else path("markdown_dir")
+    log.info("Checking evidence in %s", md_dir)
     cache: dict[str, str] = {}
     errors = 0
 

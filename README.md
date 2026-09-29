@@ -25,7 +25,8 @@ docker compose up -d            # starts Qdrant + n8n
 | 1b. Add team guides | `python scripts/02_add_guides.py` | `data/markdown/guide_*.md`, metadata rows |
 | 1c. Convert PDFs | `python scripts/03_convert_pdfs.py` | `data/markdown/pdf_*.md`, metadata rows |
 | 2. Validate test set | `python scripts/04_validate_testset.py` | checks `eval/test_queries.yaml` labels |
-| 3. Clean | *(next step)* | |
+| 3. Clean | `python scripts/05_clean.py` then `python scripts/04_validate_testset.py --processed` | `data/processed/*.md`, `cleaning_report.csv` |
+| 4. Chunk | *(next step)* | |
 | 3. Chunk | *(next step)* | `data/processed/` |
 | 4. Embed + index | *(next step)* | Qdrant collections |
 | 5. Evaluate | *(next step)* | `eval/results/` |

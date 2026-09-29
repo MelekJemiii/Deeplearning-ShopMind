@@ -27,6 +27,25 @@ collection:
       - bibliographie
       - articles connexes
 
+cleaning:
+  # A short line repeated this many times in ONE PDF is a page header/footer.
+  # Digits are masked before counting, so "2 of 8" and "3 of 8" count as the same line.
+  repeated_line_min_count: 3
+  repeated_line_max_chars: 120
+  min_doc_words: 50            # warn if a cleaned document is shorter than this
+  # Lines matching any of these (case-insensitive regex) are dropped: legal / non-product text.
+  boilerplate_patterns:
+    - 'provides this publication "?as is'
+    - 'reserves the right to change'
+    - 'not responsible for (photographic|typographic)'
+    - 'trademarks? (or registered trademarks? )?of'
+    - 'all rights reserved'
+    - 'may not be available in all regions'
+    - 'not all configuration components are available'
+    - 'feature with \*+ means'
+    - 'product image may differ'
+    - 'is subject to change without notice'
+
 # Filled in the next steps
 chunking: {}
 embedding: {}
