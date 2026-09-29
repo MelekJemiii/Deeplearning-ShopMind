@@ -1,0 +1,4 @@
+# Pin exact versions after first install:  pip freeze > requirements.lock
+requests>=2.32
+python-dotenv>=1.0
+pyyaml>=6.0

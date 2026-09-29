@@ -1,0 +1,45 @@
+# Wikipedia articles to collect: title | language | topic | device_category
+articles:
+  - {title: "Random-access memory", lang: en, topic: components, device: general}
+  - {title: "DDR5 SDRAM", lang: en, topic: components, device: general}
+  - {title: "Central processing unit", lang: en, topic: components, device: general}
+  - {title: "Multi-core processor", lang: en, topic: components, device: general}
+  - {title: "Solid-state drive", lang: en, topic: components, device: general}
+  - {title: "Hard disk drive", lang: en, topic: components, device: general}
+  - {title: "NVM Express", lang: en, topic: components, device: general}
+  - {title: "Graphics processing unit", lang: en, topic: gpu, device: general}
+  - {title: "CUDA", lang: en, topic: gpu, device: laptop}
+  - {title: "Thermal design power", lang: en, topic: components, device: laptop}
+  - {title: "Apple silicon", lang: en, topic: components, device: laptop}
+  - {title: "Laptop", lang: en, topic: devices, device: laptop}
+  - {title: "Ultrabook", lang: en, topic: devices, device: laptop}
+  - {title: "Gaming computer", lang: en, topic: devices, device: laptop}
+  - {title: "IPS panel", lang: en, topic: display, device: general}
+  - {title: "OLED", lang: en, topic: display, device: general}
+  - {title: "Refresh rate", lang: en, topic: display, device: general}
+  - {title: "Display resolution", lang: en, topic: display, device: general}
+  - {title: "Lithium-ion battery", lang: en, topic: battery, device: general}
+  - {title: "Ampere hour", lang: en, topic: battery, device: general}
+  - {title: "Smartphone", lang: en, topic: devices, device: smartphone}
+  - {title: "Camera phone", lang: en, topic: camera, device: smartphone}
+  - {title: "Image sensor", lang: en, topic: camera, device: smartphone}
+  - {title: "Image stabilization", lang: en, topic: camera, device: smartphone}
+  - {title: "5G", lang: en, topic: connectivity, device: smartphone}
+  - {title: "IP code", lang: en, topic: devices, device: smartphone}
+  - {title: "Near-field communication", lang: en, topic: connectivity, device: smartphone}
+  - {title: "USB-C", lang: en, topic: connectivity, device: accessory}
+  - {title: "USB4", lang: en, topic: connectivity, device: accessory}
+  - {title: "Thunderbolt (interface)", lang: en, topic: connectivity, device: accessory}
+  - {title: "HDMI", lang: en, topic: connectivity, device: accessory}
+  - {title: "DisplayPort", lang: en, topic: connectivity, device: accessory}
+  - {title: "Quick Charge", lang: en, topic: connectivity, device: accessory}
+  - {title: "Qi (standard)", lang: en, topic: connectivity, device: accessory}
+  - {title: "Wi-Fi 6", lang: en, topic: connectivity, device: general}
+  - {title: "Bluetooth", lang: en, topic: connectivity, device: general}
+  - {title: "Active noise control", lang: en, topic: accessories, device: accessory}
+  - {title: "Docking station", lang: en, topic: accessories, device: accessory}
+  - {title: "Mémoire vive", lang: fr, topic: components, device: general}
+  - {title: "Processeur", lang: fr, topic: components, device: general}
+  - {title: "Carte graphique", lang: fr, topic: gpu, device: general}
+  - {title: "Ordinateur portable", lang: fr, topic: devices, device: laptop}
+  - {title: "Téléphone intelligent", lang: fr, topic: devices, device: smartphone}

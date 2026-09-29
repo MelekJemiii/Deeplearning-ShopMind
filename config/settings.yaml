@@ -1,0 +1,32 @@
+# Single source of truth for all pipeline parameters.
+paths:
+  markdown_dir: data/markdown
+  raw_pdf_dir: data/raw/pdf
+  processed_dir: data/processed
+  metadata_csv: data/kb_metadata.csv
+  eval_dir: eval
+
+collection:
+  wikipedia:
+    pause_between_s: 2.0
+    max_retries: 5
+    drop_sections:
+      - references
+      - see also
+      - external links
+      - notes
+      - further reading
+      - bibliography
+      - sources
+      - citations
+      - notes et références
+      - références
+      - voir aussi
+      - liens externes
+      - bibliographie
+      - articles connexes
+
+# Filled in the next steps
+chunking: {}
+embedding: {}
+retrieval: {}

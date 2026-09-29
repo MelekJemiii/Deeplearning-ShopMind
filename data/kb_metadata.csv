@@ -1,0 +1,44 @@
+doc_id,title,topic,device_category,language,source_type,source_url,license,word_count
+kb_001,Random-access memory,components,general,en,wikipedia,https://en.wikipedia.org/wiki/Random-access_memory,CC BY-SA 4.0,3067
+kb_002,DDR5 SDRAM,components,general,en,wikipedia,https://en.wikipedia.org/wiki/DDR5_SDRAM,CC BY-SA 4.0,1642
+kb_003,Central processing unit,components,general,en,wikipedia,https://en.wikipedia.org/wiki/Central_processing_unit,CC BY-SA 4.0,8173
+kb_004,Multi-core processor,components,general,en,wikipedia,https://en.wikipedia.org/wiki/Multi-core_processor,CC BY-SA 4.0,4393
+kb_005,Solid-state drive,components,general,en,wikipedia,https://en.wikipedia.org/wiki/Solid-state_drive,CC BY-SA 4.0,6563
+kb_006,Hard disk drive,components,general,en,wikipedia,https://en.wikipedia.org/wiki/Hard_disk_drive,CC BY-SA 4.0,8953
+kb_007,NVM Express,components,general,en,wikipedia,https://en.wikipedia.org/wiki/NVM_Express,CC BY-SA 4.0,3079
+kb_008,Graphics processing unit,gpu,general,en,wikipedia,https://en.wikipedia.org/wiki/Graphics_processing_unit,CC BY-SA 4.0,4080
+kb_009,CUDA,gpu,laptop,en,wikipedia,https://en.wikipedia.org/wiki/CUDA,CC BY-SA 4.0,2161
+kb_010,Thermal design power,components,laptop,en,wikipedia,https://en.wikipedia.org/wiki/Thermal_design_power,CC BY-SA 4.0,1880
+kb_011,Apple silicon,components,laptop,en,wikipedia,https://en.wikipedia.org/wiki/Apple_silicon,CC BY-SA 4.0,8141
+kb_012,Laptop,devices,laptop,en,wikipedia,https://en.wikipedia.org/wiki/Laptop,CC BY-SA 4.0,8842
+kb_013,Ultrabook,devices,laptop,en,wikipedia,https://en.wikipedia.org/wiki/Ultrabook,CC BY-SA 4.0,635
+kb_014,Gaming computer,devices,laptop,en,wikipedia,https://en.wikipedia.org/wiki/Gaming_computer,CC BY-SA 4.0,1560
+kb_015,IPS panel,display,general,en,wikipedia,https://en.wikipedia.org/wiki/IPS_panel,CC BY-SA 4.0,859
+kb_016,OLED,display,general,en,wikipedia,https://en.wikipedia.org/wiki/OLED,CC BY-SA 4.0,12386
+kb_017,Refresh rate,display,general,en,wikipedia,https://en.wikipedia.org/wiki/Refresh_rate,CC BY-SA 4.0,2355
+kb_018,Display resolution,display,general,en,wikipedia,https://en.wikipedia.org/wiki/Display_resolution,CC BY-SA 4.0,2414
+kb_019,Lithium-ion battery,battery,general,en,wikipedia,https://en.wikipedia.org/wiki/Lithium-ion_battery,CC BY-SA 4.0,7317
+kb_020,Ampere hour,battery,general,en,wikipedia,https://en.wikipedia.org/wiki/Ampere_hour,CC BY-SA 4.0,853
+kb_021,Smartphone,devices,smartphone,en,wikipedia,https://en.wikipedia.org/wiki/Smartphone,CC BY-SA 4.0,7952
+kb_022,Camera phone,camera,smartphone,en,wikipedia,https://en.wikipedia.org/wiki/Camera_phone,CC BY-SA 4.0,8045
+kb_023,Image sensor,camera,smartphone,en,wikipedia,https://en.wikipedia.org/wiki/Image_sensor,CC BY-SA 4.0,2174
+kb_024,Image stabilization,camera,smartphone,en,wikipedia,https://en.wikipedia.org/wiki/Image_stabilization,CC BY-SA 4.0,3684
+kb_025,5G,connectivity,smartphone,en,wikipedia,https://en.wikipedia.org/wiki/5G,CC BY-SA 4.0,4748
+kb_026,IP code,devices,smartphone,en,wikipedia,https://en.wikipedia.org/wiki/IP_code,CC BY-SA 4.0,945
+kb_027,Near-field communication,connectivity,smartphone,en,wikipedia,https://en.wikipedia.org/wiki/Near-field_communication,CC BY-SA 4.0,4740
+kb_028,USB-C,connectivity,accessory,en,wikipedia,https://en.wikipedia.org/wiki/USB-C,CC BY-SA 4.0,6132
+kb_029,USB4,connectivity,accessory,en,wikipedia,https://en.wikipedia.org/wiki/USB4,CC BY-SA 4.0,5283
+kb_030,Thunderbolt (interface),connectivity,accessory,en,wikipedia,https://en.wikipedia.org/wiki/Thunderbolt_(interface),CC BY-SA 4.0,6879
+kb_031,HDMI,connectivity,accessory,en,wikipedia,https://en.wikipedia.org/wiki/HDMI,CC BY-SA 4.0,10671
+kb_032,DisplayPort,connectivity,accessory,en,wikipedia,https://en.wikipedia.org/wiki/DisplayPort,CC BY-SA 4.0,7862
+kb_033,Quick Charge,connectivity,accessory,en,wikipedia,https://en.wikipedia.org/wiki/Quick_Charge,CC BY-SA 4.0,1023
+kb_034,Qi (standard),connectivity,accessory,en,wikipedia,https://en.wikipedia.org/wiki/Qi_(standard),CC BY-SA 4.0,1873
+kb_035,Wi-Fi 6,connectivity,general,en,wikipedia,https://en.wikipedia.org/wiki/Wi-Fi_6,CC BY-SA 4.0,625
+kb_036,Bluetooth,connectivity,general,en,wikipedia,https://en.wikipedia.org/wiki/Bluetooth,CC BY-SA 4.0,10084
+kb_037,Active noise control,accessories,accessory,en,wikipedia,https://en.wikipedia.org/wiki/Active_noise_control,CC BY-SA 4.0,1145
+kb_038,Docking station,accessories,accessory,en,wikipedia,https://en.wikipedia.org/wiki/Docking_station,CC BY-SA 4.0,1256
+kb_039,Mémoire vive,components,general,fr,wikipedia,https://fr.wikipedia.org/wiki/Mémoire_vive,CC BY-SA 4.0,1581
+kb_040,Processeur,components,general,fr,wikipedia,https://fr.wikipedia.org/wiki/Processeur,CC BY-SA 4.0,5566
+kb_041,Carte graphique,gpu,general,fr,wikipedia,https://fr.wikipedia.org/wiki/Carte_graphique,CC BY-SA 4.0,2897
+kb_042,Ordinateur portable,devices,laptop,fr,wikipedia,https://fr.wikipedia.org/wiki/Ordinateur_portable,CC BY-SA 4.0,2686
+kb_043,Téléphone intelligent,devices,smartphone,fr,wikipedia,https://fr.wikipedia.org/wiki/Téléphone_intelligent,CC BY-SA 4.0,10176
