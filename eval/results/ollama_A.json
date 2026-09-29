@@ -1,0 +1,1102 @@
+{
+  "run": "ollama_A",
+  "provider": "ollama",
+  "strategy": "A",
+  "model": "bge-m3",
+  "collection": "shopmind_kb_ollama_A",
+  "rows": [
+    {
+      "id": "q01",
+      "type": "use_case",
+      "lang": "fr",
+      "query": "Combien de RAM faut-il pour faire de la data science ?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.7096,
+      "embed_ms": 0.5,
+      "search_ms": 38.7,
+      "top5": [
+        [
+          "guide_001#A000",
+          0.7096
+        ],
+        [
+          "guide_001#A001",
+          0.6729
+        ],
+        [
+          "kb_001#A010",
+          0.6192
+        ],
+        [
+          "guide_002#A000",
+          0.5966
+        ],
+        [
+          "kb_001#A004",
+          0.5918
+        ]
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "use_case",
+      "lang": "fr",
+      "query": "Est-ce qu'une carte graphique est nécessaire pour le deep learning ?",
+      "rank": 3,
+      "doc_rank": 3,
+      "top1_score": 0.66,
+      "embed_ms": 26080.4,
+      "search_ms": 18.0,
+      "top5": [
+        [
+          "kb_041#A003",
+          0.66
+        ],
+        [
+          "kb_041#A012",
+          0.6464
+        ],
+        [
+          "guide_001#A000",
+          0.6382
+        ],
+        [
+          "kb_041#A004",
+          0.6348
+        ],
+        [
+          "guide_001#A001",
+          0.6238
+        ]
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "use_case",
+      "lang": "fr",
+      "query": "Faut-il une carte graphique dédiée pour programmer ?",
+      "rank": 7,
+      "doc_rank": 7,
+      "top1_score": 0.6835,
+      "embed_ms": 3004.0,
+      "search_ms": 11.8,
+      "top5": [
+        [
+          "kb_041#A012",
+          0.6835
+        ],
+        [
+          "kb_041#A000",
+          0.6768
+        ],
+        [
+          "kb_041#A003",
+          0.6644
+        ],
+        [
+          "kb_041#A004",
+          0.6634
+        ],
+        [
+          "kb_041#A001",
+          0.661
+        ]
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "use_case",
+      "lang": "fr",
+      "query": "Je veux développer des applications iPhone, quel ordinateur acheter ?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.7315,
+      "embed_ms": 190.6,
+      "search_ms": 30.3,
+      "top5": [
+        [
+          "guide_002#A001",
+          0.7315
+        ],
+        [
+          "guide_002#A000",
+          0.6258
+        ],
+        [
+          "kb_011#A030",
+          0.6029
+        ],
+        [
+          "kb_011#A000",
+          0.5706
+        ],
+        [
+          "kb_011#A002",
+          0.5619
+        ]
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "use_case",
+      "lang": "fr",
+      "query": "Pourquoi deux laptops avec la même RTX n'ont pas les mêmes performances en jeu ?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.6442,
+      "embed_ms": 189.8,
+      "search_ms": 35.5,
+      "top5": [
+        [
+          "guide_003#A000",
+          0.6442
+        ],
+        [
+          "kb_012#A012",
+          0.6055
+        ],
+        [
+          "kb_012#A008",
+          0.6016
+        ],
+        [
+          "kb_014#A003",
+          0.5972
+        ],
+        [
+          "guide_003#A001",
+          0.5952
+        ]
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "use_case",
+      "lang": "fr",
+      "query": "Quel taux de rafraîchissement d'écran choisir pour jouer ?",
+      "rank": null,
+      "doc_rank": 7,
+      "top1_score": 0.6765,
+      "embed_ms": 187.4,
+      "search_ms": 17.8,
+      "top5": [
+        [
+          "kb_017#A005",
+          0.6765
+        ],
+        [
+          "kb_017#A002",
+          0.6645
+        ],
+        [
+          "kb_017#A007",
+          0.6479
+        ],
+        [
+          "kb_017#A008",
+          0.646
+        ],
+        [
+          "kb_017#A004",
+          0.6443
+        ]
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "use_case",
+      "lang": "fr",
+      "query": "Quel écran choisir pour faire du montage vidéo ?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.7334,
+      "embed_ms": 2739.3,
+      "search_ms": 37.8,
+      "top5": [
+        [
+          "guide_004#A000",
+          0.7334
+        ],
+        [
+          "kb_031#A038",
+          0.5667
+        ],
+        [
+          "kb_017#A008",
+          0.565
+        ],
+        [
+          "kb_018#A003",
+          0.5611
+        ],
+        [
+          "guide_006#A001",
+          0.5589
+        ]
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "use_case",
+      "lang": "fr",
+      "query": "Laptop pas cher pour un étudiant, qu'est-ce qui compte le plus ?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.7364,
+      "embed_ms": 181.2,
+      "search_ms": 35.6,
+      "top5": [
+        [
+          "guide_005#A000",
+          0.7364
+        ],
+        [
+          "guide_005#A001",
+          0.6996
+        ],
+        [
+          "kb_012#A030",
+          0.6374
+        ],
+        [
+          "kb_012#A022",
+          0.6271
+        ],
+        [
+          "guide_001#A001",
+          0.6213
+        ]
+      ]
+    },
+    {
+      "id": "q09",
+      "type": "use_case",
+      "lang": "fr",
+      "query": "Est-ce que plus de mégapixels donne de meilleures photos sur un smartphone ?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.7887,
+      "embed_ms": 167.5,
+      "search_ms": 25.7,
+      "top5": [
+        [
+          "guide_006#A000",
+          0.7887
+        ],
+        [
+          "kb_022#A019",
+          0.642
+        ],
+        [
+          "kb_022#A002",
+          0.6399
+        ],
+        [
+          "kb_021#A010",
+          0.628
+        ],
+        [
+          "guide_006#A001",
+          0.6279
+        ]
+      ]
+    },
+    {
+      "id": "q10",
+      "type": "compatibility",
+      "lang": "fr",
+      "query": "Mon chargeur 65W peut-il charger un laptop livré avec un chargeur 100W ?",
+      "rank": 2,
+      "doc_rank": 2,
+      "top1_score": 0.639,
+      "embed_ms": 170.4,
+      "search_ms": 13.4,
+      "top5": [
+        [
+          "kb_012#A019",
+          0.639
+        ],
+        [
+          "guide_007#A000",
+          0.6339
+        ],
+        [
+          "guide_007#A001",
+          0.6319
+        ],
+        [
+          "pdf_008#A006",
+          0.6311
+        ],
+        [
+          "kb_012#A017",
+          0.6049
+        ]
+      ]
+    },
+    {
+      "id": "q11",
+      "type": "compatibility",
+      "lang": "fr",
+      "query": "Quel câble USB-C faut-il pour charger en 100W ?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.7173,
+      "embed_ms": 167.5,
+      "search_ms": 24.7,
+      "top5": [
+        [
+          "guide_007#A000",
+          0.7173
+        ],
+        [
+          "kb_028#A004",
+          0.6706
+        ],
+        [
+          "kb_028#A005",
+          0.6539
+        ],
+        [
+          "guide_007#A001",
+          0.6481
+        ],
+        [
+          "kb_028#A003",
+          0.6293
+        ]
+      ]
+    },
+    {
+      "id": "q12",
+      "type": "compatibility",
+      "lang": "en",
+      "query": "Can I charge the Legion 5 over USB-C?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.6404,
+      "embed_ms": 2991.1,
+      "search_ms": 25.6,
+      "top5": [
+        [
+          "pdf_005#A006",
+          0.6404
+        ],
+        [
+          "pdf_005#A004",
+          0.6204
+        ],
+        [
+          "pdf_005#A003",
+          0.6118
+        ],
+        [
+          "pdf_005#A007",
+          0.6074
+        ],
+        [
+          "pdf_005#A000",
+          0.5965
+        ]
+      ]
+    },
+    {
+      "id": "q13",
+      "type": "definition",
+      "lang": "en",
+      "query": "What is NVMe?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.6878,
+      "embed_ms": 2474.5,
+      "search_ms": 34.6,
+      "top5": [
+        [
+          "kb_007#A000",
+          0.6878
+        ],
+        [
+          "kb_007#A001",
+          0.644
+        ],
+        [
+          "kb_007#A010",
+          0.6302
+        ],
+        [
+          "kb_007#A005",
+          0.6216
+        ],
+        [
+          "kb_007#A002",
+          0.6138
+        ]
+      ]
+    },
+    {
+      "id": "q14",
+      "type": "definition",
+      "lang": "en",
+      "query": "How is an OLED display different from an LCD?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.7446,
+      "embed_ms": 178.5,
+      "search_ms": 15.3,
+      "top5": [
+        [
+          "kb_016#A000",
+          0.7446
+        ],
+        [
+          "kb_016#A010",
+          0.7351
+        ],
+        [
+          "kb_016#A023",
+          0.7105
+        ],
+        [
+          "kb_016#A024",
+          0.7079
+        ],
+        [
+          "kb_016#A029",
+          0.6693
+        ]
+      ]
+    },
+    {
+      "id": "q15",
+      "type": "definition",
+      "lang": "en",
+      "query": "What is CUDA used for?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.7485,
+      "embed_ms": 2683.1,
+      "search_ms": 17.1,
+      "top5": [
+        [
+          "kb_009#A000",
+          0.7485
+        ],
+        [
+          "kb_009#A002",
+          0.716
+        ],
+        [
+          "kb_009#A001",
+          0.6906
+        ],
+        [
+          "kb_009#A006",
+          0.6834
+        ],
+        [
+          "kb_009#A003",
+          0.6775
+        ]
+      ]
+    },
+    {
+      "id": "q16",
+      "type": "definition",
+      "lang": "en",
+      "query": "What does the IP68 rating mean?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.5902,
+      "embed_ms": 2717.7,
+      "search_ms": 17.0,
+      "top5": [
+        [
+          "kb_026#A001",
+          0.5902
+        ],
+        [
+          "kb_026#A000",
+          0.5715
+        ],
+        [
+          "kb_026#A002",
+          0.5408
+        ],
+        [
+          "kb_026#A003",
+          0.4998
+        ],
+        [
+          "pdf_007#A010",
+          0.4782
+        ]
+      ]
+    },
+    {
+      "id": "q17",
+      "type": "definition",
+      "lang": "en",
+      "query": "What is the difference between Thunderbolt 4 and USB4?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.7442,
+      "embed_ms": 2896.8,
+      "search_ms": 23.5,
+      "top5": [
+        [
+          "kb_029#A000",
+          0.7442
+        ],
+        [
+          "kb_029#A011",
+          0.7319
+        ],
+        [
+          "kb_029#A002",
+          0.7287
+        ],
+        [
+          "kb_029#A017",
+          0.7245
+        ],
+        [
+          "kb_029#A001",
+          0.7209
+        ]
+      ]
+    },
+    {
+      "id": "q18",
+      "type": "definition",
+      "lang": "en",
+      "query": "How does wireless phone charging work?",
+      "rank": 5,
+      "doc_rank": 5,
+      "top1_score": 0.6821,
+      "embed_ms": 187.2,
+      "search_ms": 31.2,
+      "top5": [
+        [
+          "kb_027#A001",
+          0.6821
+        ],
+        [
+          "kb_033#A000",
+          0.6388
+        ],
+        [
+          "kb_021#A009",
+          0.6303
+        ],
+        [
+          "kb_033#A001",
+          0.6089
+        ],
+        [
+          "kb_034#A000",
+          0.6087
+        ]
+      ]
+    },
+    {
+      "id": "q19",
+      "type": "definition",
+      "lang": "en",
+      "query": "What is the difference between Wh and mAh for batteries?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.5715,
+      "embed_ms": 151.5,
+      "search_ms": 18.1,
+      "top5": [
+        [
+          "guide_008#A001",
+          0.5715
+        ],
+        [
+          "kb_020#A003",
+          0.5691
+        ],
+        [
+          "kb_020#A000",
+          0.5595
+        ],
+        [
+          "kb_020#A002",
+          0.5217
+        ],
+        [
+          "kb_019#A011",
+          0.5166
+        ]
+      ]
+    },
+    {
+      "id": "q20",
+      "type": "spec_lookup",
+      "lang": "en",
+      "query": "What is the TGP of the RTX 5060 in the Lenovo Legion 5?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.6366,
+      "embed_ms": 197.9,
+      "search_ms": 7.3,
+      "top5": [
+        [
+          "pdf_005#A002",
+          0.6366
+        ],
+        [
+          "pdf_005#A005",
+          0.5919
+        ],
+        [
+          "pdf_005#A001",
+          0.5834
+        ],
+        [
+          "pdf_005#A003",
+          0.5809
+        ],
+        [
+          "pdf_005#A004",
+          0.562
+        ]
+      ]
+    },
+    {
+      "id": "q21",
+      "type": "spec_lookup",
+      "lang": "en",
+      "query": "Is the RAM upgradeable on the Dell XPS 14?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.6759,
+      "embed_ms": 156.8,
+      "search_ms": 26.4,
+      "top5": [
+        [
+          "pdf_011#A003",
+          0.6759
+        ],
+        [
+          "pdf_011#A001",
+          0.6305
+        ],
+        [
+          "pdf_011#A002",
+          0.625
+        ],
+        [
+          "pdf_011#A008",
+          0.6207
+        ],
+        [
+          "pdf_011#A004",
+          0.6197
+        ]
+      ]
+    },
+    {
+      "id": "q22",
+      "type": "spec_lookup",
+      "lang": "en",
+      "query": "Battery capacity of the HP Victus 15",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.7528,
+      "embed_ms": 175.0,
+      "search_ms": 8.5,
+      "top5": [
+        [
+          "pdf_009#A000",
+          0.7528
+        ],
+        [
+          "pdf_009#A001",
+          0.7193
+        ],
+        [
+          "pdf_010#A013",
+          0.6116
+        ],
+        [
+          "pdf_004#A002",
+          0.5961
+        ],
+        [
+          "pdf_012#A004",
+          0.5915
+        ]
+      ]
+    },
+    {
+      "id": "q23",
+      "type": "spec_lookup",
+      "lang": "en",
+      "query": "Which power adapter does the Dell XPS 14 need for full performance?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.7649,
+      "embed_ms": 153.2,
+      "search_ms": 25.1,
+      "top5": [
+        [
+          "pdf_011#A013",
+          0.7649
+        ],
+        [
+          "pdf_011#A012",
+          0.7284
+        ],
+        [
+          "pdf_011#A014",
+          0.695
+        ],
+        [
+          "pdf_011#A006",
+          0.6833
+        ],
+        [
+          "pdf_011#A001",
+          0.6711
+        ]
+      ]
+    },
+    {
+      "id": "q24",
+      "type": "spec_lookup",
+      "lang": "en",
+      "query": "What color gamut does the HP Victus 15 screen cover?",
+      "rank": 2,
+      "doc_rank": 1,
+      "top1_score": 0.684,
+      "embed_ms": 151.0,
+      "search_ms": 8.7,
+      "top5": [
+        [
+          "pdf_009#A001",
+          0.684
+        ],
+        [
+          "pdf_009#A000",
+          0.6704
+        ],
+        [
+          "pdf_004#A003",
+          0.5383
+        ],
+        [
+          "pdf_008#A007",
+          0.5327
+        ],
+        [
+          "pdf_005#A005",
+          0.5275
+        ]
+      ]
+    },
+    {
+      "id": "q25",
+      "type": "spec_lookup",
+      "lang": "en",
+      "query": "What battery options are available for the HP ProBook 450 G10?",
+      "rank": 2,
+      "doc_rank": 1,
+      "top1_score": 0.6922,
+      "embed_ms": 127.5,
+      "search_ms": 24.5,
+      "top5": [
+        [
+          "pdf_010#A001",
+          0.6922
+        ],
+        [
+          "pdf_010#A013",
+          0.6881
+        ],
+        [
+          "pdf_010#A000",
+          0.674
+        ],
+        [
+          "pdf_010#A007",
+          0.6477
+        ],
+        [
+          "pdf_010#A008",
+          0.6458
+        ]
+      ]
+    },
+    {
+      "id": "q26",
+      "type": "cross_lingual",
+      "lang": "fr",
+      "query": "Combien d'écrans externes peut-on brancher sur le Legion 5 ?",
+      "rank": 2,
+      "doc_rank": 1,
+      "top1_score": 0.6379,
+      "embed_ms": 145.3,
+      "search_ms": 28.3,
+      "top5": [
+        [
+          "pdf_005#A005",
+          0.6379
+        ],
+        [
+          "pdf_005#A002",
+          0.634
+        ],
+        [
+          "pdf_005#A003",
+          0.626
+        ],
+        [
+          "pdf_005#A004",
+          0.6149
+        ],
+        [
+          "pdf_005#A006",
+          0.5897
+        ]
+      ]
+    },
+    {
+      "id": "q27",
+      "type": "cross_lingual",
+      "lang": "fr",
+      "query": "Quelle est la capacité de la batterie du Dell XPS 14 ?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.7378,
+      "embed_ms": 135.5,
+      "search_ms": 8.9,
+      "top5": [
+        [
+          "pdf_011#A014",
+          0.7378
+        ],
+        [
+          "pdf_011#A013",
+          0.6906
+        ],
+        [
+          "pdf_011#A015",
+          0.6854
+        ],
+        [
+          "pdf_011#A001",
+          0.6788
+        ],
+        [
+          "pdf_011#A003",
+          0.6729
+        ]
+      ]
+    },
+    {
+      "id": "q28",
+      "type": "cross_lingual",
+      "lang": "fr",
+      "query": "La mémoire du Dell XPS 14 est-elle soudée ?",
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.6392,
+      "embed_ms": 126.8,
+      "search_ms": 9.5,
+      "top5": [
+        [
+          "pdf_011#A003",
+          0.6392
+        ],
+        [
+          "pdf_011#A004",
+          0.5927
+        ],
+        [
+          "pdf_011#A017",
+          0.5821
+        ],
+        [
+          "pdf_011#A006",
+          0.5759
+        ],
+        [
+          "pdf_011#A001",
+          0.5757
+        ]
+      ]
+    },
+    {
+      "id": "q29",
+      "type": "out_of_scope",
+      "lang": "fr",
+      "query": "Quel est le prix de l'iPhone 16 en Tunisie ?",
+      "rank": null,
+      "doc_rank": null,
+      "top1_score": 0.5036,
+      "embed_ms": 126.1,
+      "search_ms": 28.2,
+      "top5": [
+        [
+          "kb_034#A005",
+          0.5036
+        ],
+        [
+          "kb_043#A048",
+          0.4848
+        ],
+        [
+          "kb_011#A012",
+          0.4802
+        ],
+        [
+          "kb_043#A030",
+          0.4757
+        ],
+        [
+          "kb_043#A016",
+          0.4667
+        ]
+      ]
+    },
+    {
+      "id": "q30",
+      "type": "out_of_scope",
+      "lang": "fr",
+      "query": "Comment remplacer l'écran cassé de mon téléphone ?",
+      "rank": null,
+      "doc_rank": null,
+      "top1_score": 0.6211,
+      "embed_ms": 203.3,
+      "search_ms": 29.6,
+      "top5": [
+        [
+          "kb_043#A043",
+          0.6211
+        ],
+        [
+          "kb_043#A045",
+          0.607
+        ],
+        [
+          "kb_043#A044",
+          0.5773
+        ],
+        [
+          "kb_021#A010",
+          0.5654
+        ],
+        [
+          "kb_043#A042",
+          0.5577
+        ]
+      ]
+    },
+    {
+      "id": "q31",
+      "type": "out_of_scope",
+      "lang": "en",
+      "query": "What is the best pizza place in Tunis?",
+      "rank": null,
+      "doc_rank": null,
+      "top1_score": 0.3282,
+      "embed_ms": 129.8,
+      "search_ms": 5.7,
+      "top5": [
+        [
+          "kb_034#A005",
+          0.3282
+        ],
+        [
+          "kb_027#A003",
+          0.3251
+        ],
+        [
+          "pdf_011#A003",
+          0.3123
+        ],
+        [
+          "kb_027#A016",
+          0.3064
+        ],
+        [
+          "kb_027#A015",
+          0.2982
+        ]
+      ]
+    }
+  ],
+  "metrics": {
+    "overall": {
+      "hit@1": 0.714,
+      "hit@3": 0.893,
+      "hit@5": 0.929,
+      "hit@10": 0.964,
+      "mrr": 0.81,
+      "doc_hit@5": 0.929,
+      "n": 28
+    },
+    "by_type": {
+      "compatibility": {
+        "hit@1": 0.667,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "hit@10": 1.0,
+        "mrr": 0.833,
+        "doc_hit@5": 1.0,
+        "n": 3
+      },
+      "cross_lingual": {
+        "hit@1": 0.667,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "hit@10": 1.0,
+        "mrr": 0.833,
+        "doc_hit@5": 1.0,
+        "n": 3
+      },
+      "definition": {
+        "hit@1": 0.857,
+        "hit@3": 0.857,
+        "hit@5": 1.0,
+        "hit@10": 1.0,
+        "mrr": 0.886,
+        "doc_hit@5": 1.0,
+        "n": 7
+      },
+      "spec_lookup": {
+        "hit@1": 0.667,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "hit@10": 1.0,
+        "mrr": 0.833,
+        "doc_hit@5": 1.0,
+        "n": 6
+      },
+      "use_case": {
+        "hit@1": 0.667,
+        "hit@3": 0.778,
+        "hit@5": 0.778,
+        "hit@10": 0.889,
+        "mrr": 0.72,
+        "doc_hit@5": 0.778,
+        "n": 9
+      }
+    },
+    "out_of_scope": {
+      "oos_top1_max": 0.6211,
+      "oos_top1_mean": 0.484,
+      "in_scope_top1_min": 0.5715,
+      "in_scope_top1_mean": 0.691,
+      "correct_top1_min": 0.5715,
+      "in_scope_rejected_at_oos_max": 0.071
+    },
+    "latency_ms": {
+      "embed_mean": 1586.7,
+      "search_mean": 22.0
+    }
+  }
+}

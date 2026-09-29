@@ -12,6 +12,8 @@ def get_client() -> QdrantClient:
     url = env("QDRANT_URL")
     if url == ":memory:":
         return QdrantClient(":memory:")
+    if url.startswith("path:"):  # local on-disk mode (tests, no server)
+        return QdrantClient(path=url[5:])
     return QdrantClient(url=url, api_key=env("QDRANT_API_KEY", required=False) or None)
 
 

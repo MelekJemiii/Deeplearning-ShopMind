@@ -30,7 +30,7 @@ docker compose exec ollama ollama pull bge-m3   # once: download the embedding m
 | 3. Clean | `python scripts/05_clean.py` then `python scripts/04_validate_testset.py --processed` | `data/processed/*.md`, `cleaning_report.csv` |
 | 4. Chunk (A + B) | `python scripts/06_chunk.py` | `data/chunks/chunks_{A,B}.jsonl`, `stats_{A,B}.json` |
 | 5. Embed + index | `python scripts/07_embed_index.py` | Qdrant collections `shopmind_kb_<provider>_<A|B>` |
-| 6. Evaluate | *(next step)* | |
+| 6. Evaluate retrieval | `python scripts/08_evaluate.py` | `eval/results/summary.md` + per-run JSON/CSV |
 | 3. Chunk | *(next step)* | `data/processed/` |
 | 4. Embed + index | *(next step)* | Qdrant collections |
 | 5. Evaluate | *(next step)* | `eval/results/` |

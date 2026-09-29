@@ -7,6 +7,7 @@ services:
     volumes:
       - ./qdrant_storage:/qdrant/storage
     environment:
+      - OLLAMA_KEEP_ALIVE=24h 
       - QDRANT__SERVICE__API_KEY=${QDRANT_API_KEY:-}
 
   ollama:

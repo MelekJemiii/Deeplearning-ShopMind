@@ -1,0 +1,32 @@
+id,type,lang,rank,doc_rank,top1_score,query,top1_chunk
+q01,use_case,fr,1,1,0.7648,Combien de RAM faut-il pour faire de la data science ?,guide_001#B001
+q02,use_case,fr,1,1,0.6748,Est-ce qu'une carte graphique est nécessaire pour le deep learning ?,guide_001#B003
+q03,use_case,fr,1,1,0.6835,Faut-il une carte graphique dédiée pour programmer ?,guide_002#B001
+q04,use_case,fr,1,1,0.657,"Je veux développer des applications iPhone, quel ordinateur acheter ?",guide_002#B002
+q05,use_case,fr,1,1,0.6337,Pourquoi deux laptops avec la même RTX n'ont pas les mêmes performances en jeu ?,guide_003#B001
+q06,use_case,fr,,,0.7148,Quel taux de rafraîchissement d'écran choisir pour jouer ?,kb_017#B006
+q07,use_case,fr,1,1,0.7234,Quel écran choisir pour faire du montage vidéo ?,guide_004#B002
+q08,use_case,fr,1,1,0.7268,"Laptop pas cher pour un étudiant, qu'est-ce qui compte le plus ?",guide_005#B000
+q09,use_case,fr,2,1,0.7843,Est-ce que plus de mégapixels donne de meilleures photos sur un smartphone ?,guide_006#B000
+q10,compatibility,fr,1,1,0.684,Mon chargeur 65W peut-il charger un laptop livré avec un chargeur 100W ?,guide_007#B002
+q11,compatibility,fr,1,1,0.7238,Quel câble USB-C faut-il pour charger en 100W ?,guide_007#B003
+q12,compatibility,en,1,1,0.6648,Can I charge the Legion 5 over USB-C?,pdf_005#B012
+q13,definition,en,1,1,0.6857,What is NVMe?,kb_007#B000
+q14,definition,en,2,1,0.7716,How is an OLED display different from an LCD?,kb_016#B011
+q15,definition,en,1,1,0.7499,What is CUDA used for?,kb_009#B000
+q16,definition,en,1,1,0.5905,What does the IP68 rating mean?,kb_026#B000
+q17,definition,en,1,1,0.739,What is the difference between Thunderbolt 4 and USB4?,kb_029#B019
+q18,definition,en,5,5,0.6933,How does wireless phone charging work?,kb_027#B002
+q19,definition,en,1,1,0.6794,What is the difference between Wh and mAh for batteries?,guide_008#B002
+q20,spec_lookup,en,1,1,0.67,What is the TGP of the RTX 5060 in the Lenovo Legion 5?,pdf_005#B003
+q21,spec_lookup,en,1,1,0.6696,Is the RAM upgradeable on the Dell XPS 14?,pdf_011#B003
+q22,spec_lookup,en,1,1,0.753,Battery capacity of the HP Victus 15,pdf_009#B000
+q23,spec_lookup,en,1,1,0.767,Which power adapter does the Dell XPS 14 need for full performance?,pdf_011#B018
+q24,spec_lookup,en,2,1,0.6781,What color gamut does the HP Victus 15 screen cover?,pdf_009#B001
+q25,spec_lookup,en,1,1,0.7065,What battery options are available for the HP ProBook 450 G10?,pdf_010#B025
+q26,cross_lingual,fr,1,1,0.649,Combien d'écrans externes peut-on brancher sur le Legion 5 ?,pdf_005#B003
+q27,cross_lingual,fr,1,1,0.7515,Quelle est la capacité de la batterie du Dell XPS 14 ?,pdf_011#B019
+q28,cross_lingual,fr,1,1,0.6387,La mémoire du Dell XPS 14 est-elle soudée ?,pdf_011#B003
+q29,out_of_scope,fr,,,0.5403,Quel est le prix de l'iPhone 16 en Tunisie ?,kb_011#B021
+q30,out_of_scope,fr,,,0.6414,Comment remplacer l'écran cassé de mon téléphone ?,kb_043#B054
+q31,out_of_scope,en,,,0.3237,What is the best pizza place in Tunis?,kb_034#B006
