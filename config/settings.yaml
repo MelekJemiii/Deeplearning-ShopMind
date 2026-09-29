@@ -62,5 +62,21 @@ chunking:
       max_tokens: 500
       min_tokens: 80           # smaller sections are merged with the following ones
       overlap_tokens: 0        # sections are self-contained; only oversized ones are sub-split
-embedding: {}
-retrieval: {}
+embedding:
+  provider: gemini                 # gemini | fake (deterministic vectors, for tests without API)
+  model: gemini-embedding-2        # multimodal, 8192-token input, auto-normalized at reduced dims
+  dimensions: 768                  # MRL: 768 keeps ~all quality at 1/4 the storage of 3072
+  # gemini-embedding-2 has no task_type parameter: the task is written into the text (asymmetric retrieval)
+  document_format: "title: {title} | text: {text}"
+  query_format: "task: question answering | query: {query}"
+  batch_size: 20
+  max_retries: 6
+  cache_dir: data/embeddings       # vectors cached by hash(model, dims, input): reruns cost nothing
+vector_store:
+  collection_prefix: shopmind_kb   # one collection per chunking strategy: shopmind_kb_A, shopmind_kb_B
+  distance: cosine
+  payload_indexes: [doc_id, source_type, device_category, language, topic]   # fields usable as filters
+  upsert_batch_size: 128
+
+retrieval:
+  top_k: 5

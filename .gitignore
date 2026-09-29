@@ -10,6 +10,7 @@ data/raw/**
 data/markdown/**
 data/processed/**
 data/chunks/**
+data/embeddings/**
 !**/.gitkeep
 # Docker volumes
 qdrant_storage/

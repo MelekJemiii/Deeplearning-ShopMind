@@ -4,3 +4,6 @@ python-dotenv>=1.0
 pyyaml>=6.0
 pymupdf4llm>=0.0.17   # PDF -> Markdown with tables (AGPL license, see README)
 tiktoken>=0.7            # token counting (same tokenizer as the embedding model)
+google-genai>=1.0           # Gemini embeddings
+qdrant-client>=1.10         # vector store client
+numpy>=1.26
