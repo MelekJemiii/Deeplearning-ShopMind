@@ -3,3 +3,4 @@ requests>=2.32
 python-dotenv>=1.0
 pyyaml>=6.0
 pymupdf4llm>=0.0.17   # PDF -> Markdown with tables (AGPL license, see README)
+tiktoken>=0.7            # token counting (same tokenizer as the embedding model)

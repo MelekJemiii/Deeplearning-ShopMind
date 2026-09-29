@@ -9,6 +9,7 @@ __pycache__/
 data/raw/**
 data/markdown/**
 data/processed/**
+data/chunks/**
 !**/.gitkeep
 # Docker volumes
 qdrant_storage/

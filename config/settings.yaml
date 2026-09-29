@@ -47,6 +47,20 @@ cleaning:
     - 'is subject to change without notice'
 
 # Filled in the next steps
-chunking: {}
+chunking:
+  # cl100k_base = tokenizer of OpenAI text-embedding-3-* models; token counts = embedding cost + limits
+  tokenizer: cl100k_base
+  output_dir: data/chunks
+  strategies:
+    # Same max size for A and B: the comparison then isolates ONE variable, structure awareness.
+    A:
+      method: recursive        # structure-blind: pack paragraphs, split sentences/words when too long
+      max_tokens: 500
+      overlap_tokens: 50       # ~10%: keeps ideas cut at a boundary readable in the next chunk
+    B:
+      method: headings         # one chunk per section, prefixed with its heading path
+      max_tokens: 500
+      min_tokens: 80           # smaller sections are merged with the following ones
+      overlap_tokens: 0        # sections are self-contained; only oversized ones are sub-split
 embedding: {}
 retrieval: {}
