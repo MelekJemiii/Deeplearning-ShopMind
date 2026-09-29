@@ -1,0 +1,238 @@
+# ShopMind AI - RAG retrieval test set (v1)
+# Written BEFORE chunking to keep the evaluation unbiased. Do not tune it on results.
+#
+# A retrieved chunk is RELEVANT if it comes from one of the `relevant` doc_ids
+# AND contains at least one of that doc's `evidence` phrases (case/format-insensitive).
+# This is chunking-independent: the same labels work for every chunking strategy.
+#
+# type: use_case | definition | spec_lookup | compatibility | cross_lingual | out_of_scope
+# out_of_scope queries have no relevant docs: the system should return low-similarity results.
+# Validate labels with:  python scripts/04_validate_testset.py
+
+queries:
+  # ---------- Use-case advice (French, answered by team guides) ----------
+  - id: q01
+    query: "Combien de RAM faut-il pour faire de la data science ?"
+    lang: fr
+    type: use_case
+    relevant:
+      - {doc_id: guide_001, evidence: ["16 Go : minimum recommandé"]}
+
+  - id: q02
+    query: "Est-ce qu'une carte graphique est nécessaire pour le deep learning ?"
+    lang: fr
+    type: use_case
+    relevant:
+      - {doc_id: guide_001, evidence: ["un GPU NVIDIA est fortement conseillé"]}
+
+  - id: q03
+    query: "Faut-il une carte graphique dédiée pour programmer ?"
+    lang: fr
+    type: use_case
+    relevant:
+      - {doc_id: guide_002, evidence: ["Un GPU dédié n'est pas nécessaire pour programmer"]}
+
+  - id: q04
+    query: "Je veux développer des applications iPhone, quel ordinateur acheter ?"
+    lang: fr
+    type: use_case
+    relevant:
+      - {doc_id: guide_002, evidence: ["Xcode"]}
+
+  - id: q05
+    query: "Pourquoi deux laptops avec la même RTX n'ont pas les mêmes performances en jeu ?"
+    lang: fr
+    type: use_case
+    relevant:
+      - {doc_id: guide_003, evidence: ["Total Graphics Power"]}
+
+  - id: q06
+    query: "Quel taux de rafraîchissement d'écran choisir pour jouer ?"
+    lang: fr
+    type: use_case
+    relevant:
+      - {doc_id: guide_003, evidence: ["144 Hz ou plus"]}
+      - {doc_id: guide_008, evidence: ["120 ou 144 Hz"]}
+
+  - id: q07
+    query: "Quel écran choisir pour faire du montage vidéo ?"
+    lang: fr
+    type: use_case
+    relevant:
+      - {doc_id: guide_004, evidence: ["100 % de l'espace sRGB"]}
+
+  - id: q08
+    query: "Laptop pas cher pour un étudiant, qu'est-ce qui compte le plus ?"
+    lang: fr
+    type: use_case
+    relevant:
+      - {doc_id: guide_005, evidence: ["Un SSD à la place d'un disque dur"]}
+
+  - id: q09
+    query: "Est-ce que plus de mégapixels donne de meilleures photos sur un smartphone ?"
+    lang: fr
+    type: use_case
+    relevant:
+      - {doc_id: guide_006, evidence: ["pixel binning"]}
+
+  # ---------- Compatibility ----------
+  - id: q10
+    query: "Mon chargeur 65W peut-il charger un laptop livré avec un chargeur 100W ?"
+    lang: fr
+    type: compatibility
+    relevant:
+      - {doc_id: guide_007, evidence: ["charge plus lentement"]}
+      - {doc_id: pdf_011, evidence: ["Less than 75 W"]}
+
+  - id: q11
+    query: "Quel câble USB-C faut-il pour charger en 100W ?"
+    lang: fr
+    type: compatibility
+    relevant:
+      - {doc_id: guide_007, evidence: ["e-marker"]}
+
+  - id: q12
+    query: "Can I charge the Legion 5 over USB-C?"
+    lang: en
+    type: compatibility
+    relevant:
+      - {doc_id: pdf_005, evidence: ["USB PD 65-100W input"]}
+
+  # ---------- Definitions (English, answered by Wikipedia / glossary) ----------
+  - id: q13
+    query: "What is NVMe?"
+    lang: en
+    type: definition
+    relevant:
+      - {doc_id: kb_007, evidence: ["NVM Express"]}
+
+  - id: q14
+    query: "How is an OLED display different from an LCD?"
+    lang: en
+    type: definition
+    relevant:
+      - {doc_id: kb_016, evidence: ["organic light-emitting diode"]}
+      - {doc_id: guide_008, evidence: ["chaque pixel produit sa propre lumière"]}
+
+  - id: q15
+    query: "What is CUDA used for?"
+    lang: en
+    type: definition
+    relevant:
+      - {doc_id: kb_009, evidence: ["parallel computing platform"]}
+
+  - id: q16
+    query: "What does the IP68 rating mean?"
+    lang: en
+    type: definition
+    relevant:
+      - {doc_id: kb_026, evidence: ["ingress protection", "International Protection"]}
+      - {doc_id: guide_008, evidence: ["IP68"]}
+
+  - id: q17
+    query: "What is the difference between Thunderbolt 4 and USB4?"
+    lang: en
+    type: definition
+    relevant:
+      - {doc_id: kb_030, evidence: ["Thunderbolt 4"]}
+      - {doc_id: kb_029, evidence: ["Thunderbolt"]}
+      - {doc_id: guide_007, evidence: ["Thunderbolt et USB4"]}
+
+  - id: q18
+    query: "How does wireless phone charging work?"
+    lang: en
+    type: definition
+    relevant:
+      - {doc_id: kb_034, evidence: ["inductive"]}
+
+  - id: q19
+    query: "What is the difference between Wh and mAh for batteries?"
+    lang: en
+    type: definition
+    relevant:
+      - {doc_id: guide_008, evidence: ["plus pertinent que les mAh"]}
+      - {doc_id: kb_020, evidence: ["ampere hour", "ampere-hour"]}
+
+  # ---------- Exact spec lookups (manufacturer PDFs) ----------
+  - id: q20
+    query: "What is the TGP of the RTX 5060 in the Lenovo Legion 5?"
+    lang: en
+    type: spec_lookup
+    relevant:
+      - {doc_id: pdf_005, evidence: ["115W"]}
+
+  - id: q21
+    query: "Is the RAM upgradeable on the Dell XPS 14?"
+    lang: en
+    type: spec_lookup
+    relevant:
+      - {doc_id: pdf_011, evidence: ["not upgradeable"]}
+
+  - id: q22
+    query: "Battery capacity of the HP Victus 15"
+    lang: en
+    type: spec_lookup
+    relevant:
+      - {doc_id: pdf_009, evidence: ["70 Wh"]}
+
+  - id: q23
+    query: "Which power adapter does the Dell XPS 14 need for full performance?"
+    lang: en
+    type: spec_lookup
+    relevant:
+      - {doc_id: pdf_011, evidence: ["100 W"]}
+
+  - id: q24
+    query: "What color gamut does the HP Victus 15 screen cover?"
+    lang: en
+    type: spec_lookup
+    relevant:
+      - {doc_id: pdf_009, evidence: ["62.5% sRGB"]}
+
+  - id: q25
+    query: "What battery options are available for the HP ProBook 450 G10?"
+    lang: en
+    type: spec_lookup
+    relevant:
+      - {doc_id: pdf_010, evidence: ["42 Wh", "51 Wh"]}
+
+  # ---------- Cross-lingual (French question, English-only answer) ----------
+  - id: q26
+    query: "Combien d'écrans externes peut-on brancher sur le Legion 5 ?"
+    lang: fr
+    type: cross_lingual
+    relevant:
+      - {doc_id: pdf_005, evidence: ["3 external monitors"]}
+
+  - id: q27
+    query: "Quelle est la capacité de la batterie du Dell XPS 14 ?"
+    lang: fr
+    type: cross_lingual
+    relevant:
+      - {doc_id: pdf_011, evidence: ["70 Wh"]}
+
+  - id: q28
+    query: "La mémoire du Dell XPS 14 est-elle soudée ?"
+    lang: fr
+    type: cross_lingual
+    relevant:
+      - {doc_id: pdf_011, evidence: ["not upgradeable"]}
+
+  # ---------- Out of scope (no answer in the KB) ----------
+  - id: q29
+    query: "Quel est le prix de l'iPhone 16 en Tunisie ?"
+    lang: fr
+    type: out_of_scope
+    relevant: []
+
+  - id: q30
+    query: "Comment remplacer l'écran cassé de mon téléphone ?"
+    lang: fr
+    type: out_of_scope
+    relevant: []
+
+  - id: q31
+    query: "What is the best pizza place in Tunis?"
+    lang: en
+    type: out_of_scope
+    relevant: []
