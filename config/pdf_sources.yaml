@@ -1,0 +1,79 @@
+# Manufacturer PDFs to add to the knowledge base.
+# pages (optional): 1-based, as shown in a PDF viewer, e.g. "21-35"
+pdfs:
+  - file: lenovo_thinkpad_e14_gen6.pdf
+    title: Lenovo ThinkPad E14 Gen 6 (AMD) - Product Specifications
+    topic: spec_sheet
+    device: laptop
+    lang: en
+    source_url: https://psref.lenovo.com
+  - file: lenovo_ideapad_slim5.pdf
+    title: Lenovo IdeaPad Slim 5 Ultra 14ILL11 - Product Specifications
+    topic: spec_sheet
+    device: laptop
+    lang: en
+    source_url: https://psref.lenovo.com
+  - file: lenovo_ideapad_slim3.pdf
+    title: Lenovo IdeaPad Slim 3 14Q7X11 - Product Specifications
+    topic: spec_sheet
+    device: laptop
+    lang: en
+    source_url: https://psref.lenovo.com
+  - file: lenovo_loq_15.pdf
+    title: Lenovo LOQ 15IRH11E - Product Specifications
+    topic: spec_sheet
+    device: laptop
+    lang: en
+    source_url: https://psref.lenovo.com
+  - file: lenovo_legion_5.pdf
+    title: Lenovo Legion 5 15IAX11 - Product Specifications
+    topic: spec_sheet
+    device: laptop
+    lang: en
+    source_url: https://psref.lenovo.com
+  - file: lenovo_yoga_pro_9.pdf
+    title: Lenovo Yoga Pro 9 16IPH11 - Product Specifications
+    topic: spec_sheet
+    device: laptop
+    lang: en
+    source_url: https://psref.lenovo.com
+  - file: lenovo_thinkpad_p1.pdf
+    title: Lenovo ThinkPad P1 Gen 8 - Product Specifications
+    topic: spec_sheet
+    device: laptop
+    lang: en
+    source_url: https://psref.lenovo.com
+  - file: lenovo_thinkpad_x1_carbon.pdf
+    title: Lenovo ThinkPad X1 Carbon Gen 14 - Product Specifications
+    topic: spec_sheet
+    device: laptop
+    lang: en
+    source_url: https://psref.lenovo.com
+  - file: hp_victus_15.pdf
+    title: HP Victus Gaming Laptop 15 - Data Sheet
+    topic: spec_sheet
+    pages: "3"
+    device: laptop
+    lang: en
+    source_url: https://h20195.www2.hp.com
+  - file: hp_probook_450.pdf
+    title: HP ProBook 450 - QuickSpecs
+    topic: spec_sheet
+    pages: "1-13"
+    device: laptop
+    lang: en
+    source_url: https://h20195.www2.hp.com
+  - file: dell_xps_14.pdf
+    title: Dell XPS 14 (DA14260) - Specifications
+    topic: spec_sheet
+    device: laptop
+    lang: en
+    source_url: https://www.dell.com/support
+    pages: "21-35"
+  - file: dell_inspiron_15.pdf
+    title: Dell Inspiron 15 - Specifications
+    topic: spec_sheet
+    device: laptop
+    lang: en
+    source_url: https://www.dell.com/support
+    pages: "7-22"

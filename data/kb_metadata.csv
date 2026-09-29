@@ -50,3 +50,15 @@ kb_040,Processeur,components,general,fr,wikipedia,https://fr.wikipedia.org/wiki/
 kb_041,Carte graphique,gpu,general,fr,wikipedia,https://fr.wikipedia.org/wiki/Carte_graphique,CC BY-SA 4.0,2897
 kb_042,Ordinateur portable,devices,laptop,fr,wikipedia,https://fr.wikipedia.org/wiki/Ordinateur_portable,CC BY-SA 4.0,2686
 kb_043,Téléphone intelligent,devices,smartphone,fr,wikipedia,https://fr.wikipedia.org/wiki/Téléphone_intelligent,CC BY-SA 4.0,10176
+pdf_001,Lenovo ThinkPad E14 Gen 6 (AMD) - Product Specifications,spec_sheet,laptop,en,manufacturer_pdf,https://psref.lenovo.com,manufacturer public document (academic use),2422
+pdf_002,Lenovo IdeaPad Slim 5 Ultra 14ILL11 - Product Specifications,spec_sheet,laptop,en,manufacturer_pdf,https://psref.lenovo.com,manufacturer public document (academic use),1901
+pdf_003,Lenovo IdeaPad Slim 3 14Q7X11 - Product Specifications,spec_sheet,laptop,en,manufacturer_pdf,https://psref.lenovo.com,manufacturer public document (academic use),1534
+pdf_004,Lenovo LOQ 15IRH11E - Product Specifications,spec_sheet,laptop,en,manufacturer_pdf,https://psref.lenovo.com,manufacturer public document (academic use),1639
+pdf_005,Lenovo Legion 5 15IAX11 - Product Specifications,spec_sheet,laptop,en,manufacturer_pdf,https://psref.lenovo.com,manufacturer public document (academic use),1864
+pdf_006,Lenovo Yoga Pro 9 16IPH11 - Product Specifications,spec_sheet,laptop,en,manufacturer_pdf,https://psref.lenovo.com,manufacturer public document (academic use),1973
+pdf_007,Lenovo ThinkPad P1 Gen 8 - Product Specifications,spec_sheet,laptop,en,manufacturer_pdf,https://psref.lenovo.com,manufacturer public document (academic use),2234
+pdf_008,Lenovo ThinkPad X1 Carbon Gen 14 - Product Specifications,spec_sheet,laptop,en,manufacturer_pdf,https://psref.lenovo.com,manufacturer public document (academic use),3182
+pdf_009,HP Victus Gaming Laptop 15 - Data Sheet,spec_sheet,laptop,en,manufacturer_pdf,https://h20195.www2.hp.com,manufacturer public document (academic use),418
+pdf_010,HP ProBook 450 - QuickSpecs,spec_sheet,laptop,en,manufacturer_pdf,https://h20195.www2.hp.com,manufacturer public document (academic use),3814
+pdf_011,Dell XPS 14 (DA14260) - Specifications,spec_sheet,laptop,en,manufacturer_pdf,https://www.dell.com/support,manufacturer public document (academic use),2772
+pdf_012,Dell Inspiron 15 - Specifications,spec_sheet,laptop,en,manufacturer_pdf,https://www.dell.com/support,manufacturer public document (academic use),1785
