@@ -6,7 +6,6 @@ Step 1 — Collect Wikipedia articles into the knowledge base.
 - Contact email:  .env  (WIKIPEDIA_CONTACT_EMAIL)
 Idempotent: already-downloaded articles are skipped, metadata is always rebuilt complete.
 """
-import csv
 import re
 import sys
 import time
@@ -18,6 +17,7 @@ import yaml
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from shopmind_rag.config import ROOT, SETTINGS, env, path  # noqa: E402
 from shopmind_rag.logging_utils import get_logger  # noqa: E402
+from shopmind_rag.metadata import replace_source_rows  # noqa: E402
 
 log = get_logger("collect_wikipedia")
 CFG = SETTINGS["collection"]["wikipedia"]
@@ -84,13 +84,9 @@ def main():
         words = len(md_path.read_text(encoding="utf-8").split())
         rows.append([doc_id, a["title"], a["topic"], a["device"], a["lang"], "wikipedia", url, "CC BY-SA 4.0", words])
 
-    meta = path("metadata_csv")
-    with open(meta, "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
-        w.writerow(["doc_id", "title", "topic", "device_category", "language",
-                    "source_type", "source_url", "license", "word_count"])
-        w.writerows(rows)
-    log.info("%d/%d articles in KB, %d words -> %s", len(rows), len(articles), sum(r[-1] for r in rows), meta)
+    total = replace_source_rows("wikipedia", rows)
+    log.info("%d/%d Wikipedia articles, %d words | metadata now has %d docs",
+             len(rows), len(articles), sum(r[-1] for r in rows), total)
     if failed:
         log.warning("Failed: %s  (rerun later; done ones are skipped)", ", ".join(failed))
 

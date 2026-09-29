@@ -1,5 +1,6 @@
 # Single source of truth for all pipeline parameters.
 paths:
+  guides_dir: content/guides
   markdown_dir: data/markdown
   raw_pdf_dir: data/raw/pdf
   processed_dir: data/processed

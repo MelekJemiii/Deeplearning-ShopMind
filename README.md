@@ -22,6 +22,7 @@ docker compose up -d            # starts Qdrant + n8n
 | Step | Command | Output |
 |---|---|---|
 | 1. Collect Wikipedia | `python scripts/01_download_wikipedia.py` | `data/markdown/`, `data/kb_metadata.csv` |
+| 1b. Add team guides | `python scripts/02_add_guides.py` | `data/markdown/guide_*.md`, metadata rows |
 | 2. Clean / convert PDFs | *(next step)* | |
 | 3. Chunk | *(next step)* | `data/processed/` |
 | 4. Embed + index | *(next step)* | Qdrant collections |

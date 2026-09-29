@@ -1,4 +1,12 @@
 doc_id,title,topic,device_category,language,source_type,source_url,license,word_count
+guide_001,Choisir un laptop pour la data science et le machine learning,use_case_guide,laptop,fr,team_written,content/guides/01_laptop_data_science.md,"own (AI-assisted, team-reviewed)",423
+guide_002,Choisir un laptop pour la programmation,use_case_guide,laptop,fr,team_written,content/guides/02_laptop_programmation.md,"own (AI-assisted, team-reviewed)",328
+guide_003,Choisir un laptop pour le gaming,use_case_guide,laptop,fr,team_written,content/guides/03_laptop_gaming.md,"own (AI-assisted, team-reviewed)",369
+guide_004,Choisir un laptop pour le montage vidéo,use_case_guide,laptop,fr,team_written,content/guides/04_laptop_montage_video.md,"own (AI-assisted, team-reviewed)",285
+guide_005,Choisir un laptop pour un étudiant avec un petit budget,use_case_guide,laptop,fr,team_written,content/guides/05_laptop_etudiant.md,"own (AI-assisted, team-reviewed)",328
+guide_006,Choisir un smartphone pour la photo,use_case_guide,smartphone,fr,team_written,content/guides/06_smartphone_photo.md,"own (AI-assisted, team-reviewed)",366
+guide_007,Chargeurs et câbles USB-C et compatibilité Power Delivery,compatibility_guide,accessory,fr,team_written,content/guides/07_chargeurs_usb_c_pd.md,"own (AI-assisted, team-reviewed)",423
+guide_008,Glossaire des termes techniques en électronique grand public,glossary,general,fr,team_written,content/guides/08_glossaire.md,"own (AI-assisted, team-reviewed)",523
 kb_001,Random-access memory,components,general,en,wikipedia,https://en.wikipedia.org/wiki/Random-access_memory,CC BY-SA 4.0,3067
 kb_002,DDR5 SDRAM,components,general,en,wikipedia,https://en.wikipedia.org/wiki/DDR5_SDRAM,CC BY-SA 4.0,1642
 kb_003,Central processing unit,components,general,en,wikipedia,https://en.wikipedia.org/wiki/Central_processing_unit,CC BY-SA 4.0,8173
