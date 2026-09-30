@@ -24,7 +24,7 @@ deterministic post-validation in code.
 | v4 | KB scope declared (no prices/stock/repairs → `not_found` without searching); STOP as soon as answered; budget 2 per question / 4 total; Max Iterations 6 → 10 | T2: 3 searches for 1 question (F5); T3: max iterations reached on unanswerable question (F6) |
 | validation v1 | Code node: removes facts citing chunks not returned by the tool; recomputes status; measures real searches | F2, F4 risk (invented citations); self-reported `searches_made` unreliable |
 | validation v2 | Summary built by code from verified facts only (LLM summary kept for audit) | F3 and F7: summary drifted twice despite an explicit prompt rule |
-
+| validation v3 | Facts removed if a number is absent from the cited chunk (normalized: 15,6=15.6, 3 500=3500) | Wrong specs are the most harmful hallucination for a shopping assistant; F3/F7 showed LLM text drifts |
 ---
 
 ## Failures observed and fixes

@@ -74,3 +74,23 @@ def test_validation(client):
     assert client.post("/search", json={"query": "x"}).status_code == 422             # too short
     assert client.post("/search", json={"query": "RAM", "top_k": 50}).status_code == 422  # over max_top_k
     assert client.post("/search", json={"query": "RAM", "filters": {"source_type": ["blog"]}}).status_code == 422
+
+
+def test_hybrid_search_ranks_exact_token(tmp_path):
+    """Hybrid: an exact spec token (15IAX11) that dense hashing barely sees is found via BM25."""
+    from shopmind_rag import sparse
+    from shopmind_rag.embedding import get_embedder
+    from shopmind_rag.vectorstore import QdrantClient, recreate_hybrid, search_hybrid, upsert_hybrid
+    docs = [{"chunk_id": f"d{i}", "doc_id": f"d{i}", "title": t, "text": x} for i, (t, x) in enumerate([
+        ("Legion 5 15IAX11", "Graphics RTX 5060 115W TGP"),
+        ("Gaming guide", "Choose a gaming laptop with a good GPU and 144 Hz screen"),
+        ("Laptop", "A laptop is a portable personal computer")])]
+    emb, qc = get_embedder("fake"), QdrantClient(path=str(tmp_path))
+    texts = [f"{d['title']}\n\n{d['text']}" for d in docs]
+    recreate_hybrid(qc, "h", emb.dims)
+    upsert_hybrid(qc, "h", docs, emb.embed_documents([(d["title"], d["text"]) for d in docs]),
+                  [sparse.doc_vector(t, sparse.avg_doc_len(texts)) for t in texts])
+    hits = search_hybrid(qc, "h", emb.embed_query("15IAX11 TGP"), sparse.query_vector("15IAX11 TGP"), 3, 10)
+    assert hits[0]["chunk_id"] == "d0"
+    assert -1.0 <= hits[0]["score"] <= 1.0 and "fusion_score" in hits[0]
+    qc.close()

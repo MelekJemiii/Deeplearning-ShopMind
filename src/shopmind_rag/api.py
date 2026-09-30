@@ -17,7 +17,8 @@ from pydantic import BaseModel, Field
 from .config import SETTINGS
 from .embedding import get_embedder
 from .logging_utils import get_logger
-from .vectorstore import collection_name, get_client, search
+from . import sparse
+from .vectorstore import collection_name, get_client, search, search_hybrid
 
 log = get_logger("api")
 RCFG = SETTINGS["retrieval"]
@@ -65,7 +66,8 @@ class SearchResponse(BaseModel):
 async def lifespan(app: FastAPI):
     STATE["embedder"] = get_embedder(RCFG["provider"])
     STATE["client"] = get_client()
-    STATE["collection"] = collection_name(RCFG["strategy"], RCFG["provider"])
+    STATE["mode"] = RCFG.get("mode", "dense")
+    STATE["collection"] = collection_name(RCFG["strategy"], RCFG["provider"], STATE["mode"])
     try:  # warm-up: loads the embedding model now instead of on the first user query
         STATE["embedder"].embed_query("warm-up", use_cache=False)
         log.info("Embedder warmed up (%s)", STATE["embedder"].model)
@@ -84,7 +86,7 @@ def health():
         points = client.count(name).count if client.collection_exists(name) else None
     except Exception as e:
         raise HTTPException(503, f"vector store unavailable: {e}")
-    return {"status": "ok" if points else "degraded", "collection": name, "points": points,
+    return {"status": "ok" if points else "degraded", "collection": name, "points": points, "mode": STATE["mode"],
             "embedding": {"provider": RCFG["provider"], "model": STATE["embedder"].model}}
 
 
@@ -100,7 +102,11 @@ def search_kb(req: SearchRequest):
         value = getattr(req, field)
         if value != "any":
             flt[field] = [value]
-    hits = search(STATE["client"], STATE["collection"], vec, req.top_k, flt or None)
+    if STATE["mode"] == "hybrid":
+        hits = search_hybrid(STATE["client"], STATE["collection"], vec, sparse.query_vector(req.query), req.top_k,
+                             SETTINGS["hybrid"]["prefetch_k"], flt or None)
+    else:
+        hits = search(STATE["client"], STATE["collection"], vec, req.top_k, flt or None)
     kept = [h for h in hits if h["score"] >= req.min_score]
     ms = round(1000 * (time.perf_counter() - t0), 1)
     log.info("search %r filters=%s -> %d/%d kept (%.0f ms)", req.query[:60], flt, len(kept), len(hits), ms)

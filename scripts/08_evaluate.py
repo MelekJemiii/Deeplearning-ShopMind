@@ -15,8 +15,9 @@ Outputs (versioned, they are report evidence):
   eval/results/per_query_<run>.csv
   eval/results/summary.md         comparison tables across runs
 
-Usage: python scripts/08_evaluate.py                       # config provider, strategies A and B
+Usage: python scripts/08_evaluate.py                       # config provider, strategies A and B, dense
        python scripts/08_evaluate.py --providers ollama gemini --strategies A
+       python scripts/08_evaluate.py --strategies A B --modes dense hybrid
 """
 import csv
 import json
@@ -34,7 +35,8 @@ from shopmind_rag.config import ROOT, SETTINGS  # noqa: E402
 from shopmind_rag.embedding import get_embedder  # noqa: E402
 from shopmind_rag.logging_utils import get_logger  # noqa: E402
 from shopmind_rag.text import contains_evidence  # noqa: E402
-from shopmind_rag.vectorstore import collection_name, get_client, search  # noqa: E402
+from shopmind_rag import sparse  # noqa: E402
+from shopmind_rag.vectorstore import collection_name, get_client, search, search_hybrid  # noqa: E402
 
 log = get_logger("evaluate")
 EV = SETTINGS["evaluation"]
@@ -64,9 +66,9 @@ def first_relevant_rank(hits, relevant) -> tuple[int | None, int | None]:
     return chunk_rank, doc_rank
 
 
-def evaluate(provider, strategy, queries, client):
+def evaluate(provider, strategy, queries, client, mode="dense"):
     emb = get_embedder(provider)
-    name = collection_name(strategy, provider)
+    name = collection_name(strategy, provider, mode)
     if not client.collection_exists(name):
         log.warning("SKIP %s: collection not found (run 07_embed_index.py)", name)
         return None
@@ -75,14 +77,19 @@ def evaluate(provider, strategy, queries, client):
         t0 = time.perf_counter()
         vec = emb.embed_query(q["query"])
         t1 = time.perf_counter()
-        hits = search(client, name, vec, K_MAX)
+        if mode == "hybrid":
+            hits = search_hybrid(client, name, vec, sparse.query_vector(q["query"]), K_MAX,
+                                 SETTINGS["hybrid"]["prefetch_k"])
+        else:
+            hits = search(client, name, vec, K_MAX)
         t2 = time.perf_counter()
         rank, doc_rank = first_relevant_rank(hits, q.get("relevant") or [])
         rows.append({"id": q["id"], "type": q["type"], "lang": q["lang"], "query": q["query"],
                      "rank": rank, "doc_rank": doc_rank, "top1_score": round(hits[0]["score"], 4) if hits else 0,
                      "embed_ms": round(1000 * (t1 - t0), 1), "search_ms": round(1000 * (t2 - t1), 1),
                      "top5": [(h["chunk_id"], round(h["score"], 4)) for h in hits[:5]]})
-    return {"run": f"{provider}_{strategy}", "provider": provider, "strategy": strategy,
+    run = f"{provider}_{strategy}" + ("" if mode == "dense" else f"_{mode}")
+    return {"run": run, "provider": provider, "strategy": strategy, "mode": mode,
             "model": emb.model, "collection": name, "rows": rows, "metrics": metrics(rows)}
 
 
@@ -130,7 +137,8 @@ def write_outputs(results):
                             r["query"], r["top5"][0][0] if r["top5"] else ""])
 
     md = [f"# Retrieval evaluation\n\n_Generated {datetime.now():%Y-%m-%d %H:%M}, "
-          f"{len(results[0]['rows'])} queries, top-{K_MAX} retrieval, no filters, no reranking._\n",
+          f"{len(results[0]['rows'])} queries, top-{K_MAX} retrieval, no filters, no reranking. "
+          f"Hybrid = dense + BM25 fused with RRF; its similarity columns use the dense cosine._\n",
           "## Overall (in-scope queries)\n",
           "| Run | Model | " + " | ".join(f"Hit@{k}" for k in KS) + " | MRR | Doc Hit@5 |",
           "|---|---|" + "---|" * (len(KS) + 2)]
@@ -171,16 +179,17 @@ def main():
     queries = yaml.safe_load(open(ROOT / "eval" / "test_queries.yaml", encoding="utf-8"))["queries"]
     providers = arg_list("--providers", [SETTINGS["embedding"]["provider"]])
     strategies = arg_list("--strategies", list(SETTINGS["chunking"]["strategies"]))
+    modes = arg_list("--modes", ["dense"])
     client, results = get_client(), []
-    for p in providers:
-        for s in strategies:
-            res = evaluate(p, s, queries, client)
-            if not res:
-                continue
-            o = res["metrics"]["overall"]
-            log.info("[%s] Hit@1 %.2f  Hit@3 %.2f  Hit@5 %.2f  Hit@10 %.2f  MRR %.3f  DocHit@5 %.2f",
-                     res["run"], o["hit@1"], o["hit@3"], o["hit@5"], o["hit@10"], o["mrr"], o["doc_hit@5"])
-            results.append(res)
+    runs = [(p, s, m) for p in providers for s in strategies for m in modes]
+    for p, s, mode in runs:
+        res = evaluate(p, s, queries, client, mode)
+        if not res:
+            continue
+        o = res["metrics"]["overall"]
+        log.info("[%s] Hit@1 %.2f  Hit@3 %.2f  Hit@5 %.2f  Hit@10 %.2f  MRR %.3f  DocHit@5 %.2f",
+                 res["run"], o["hit@1"], o["hit@3"], o["hit@5"], o["hit@10"], o["mrr"], o["doc_hit@5"])
+        results.append(res)
     if results:
         write_outputs(results)
 

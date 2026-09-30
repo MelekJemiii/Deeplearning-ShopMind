@@ -2,6 +2,7 @@
   "run": "ollama_B",
   "provider": "ollama",
   "strategy": "B",
+  "mode": "dense",
   "model": "bge-m3",
   "collection": "shopmind_kb_ollama_B",
   "rows": [
@@ -14,7 +15,7 @@
       "doc_rank": 1,
       "top1_score": 0.7648,
       "embed_ms": 0.1,
-      "search_ms": 28.3,
+      "search_ms": 17.2,
       "top5": [
         [
           "guide_001#B001",
@@ -47,7 +48,7 @@
       "doc_rank": 1,
       "top1_score": 0.6748,
       "embed_ms": 0.1,
-      "search_ms": 20.1,
+      "search_ms": 29.6,
       "top5": [
         [
           "guide_001#B003",
@@ -80,7 +81,7 @@
       "doc_rank": 1,
       "top1_score": 0.6835,
       "embed_ms": 0.1,
-      "search_ms": 26.0,
+      "search_ms": 15.6,
       "top5": [
         [
           "guide_002#B001",
@@ -113,7 +114,7 @@
       "doc_rank": 1,
       "top1_score": 0.657,
       "embed_ms": 0.1,
-      "search_ms": 5.7,
+      "search_ms": 15.0,
       "top5": [
         [
           "guide_002#B002",
@@ -146,7 +147,7 @@
       "doc_rank": 1,
       "top1_score": 0.6337,
       "embed_ms": 0.1,
-      "search_ms": 5.8,
+      "search_ms": 5.3,
       "top5": [
         [
           "guide_003#B001",
@@ -179,7 +180,7 @@
       "doc_rank": null,
       "top1_score": 0.7148,
       "embed_ms": 0.1,
-      "search_ms": 18.4,
+      "search_ms": 25.4,
       "top5": [
         [
           "kb_017#B006",
@@ -212,7 +213,7 @@
       "doc_rank": 1,
       "top1_score": 0.7234,
       "embed_ms": 0.1,
-      "search_ms": 6.0,
+      "search_ms": 15.7,
       "top5": [
         [
           "guide_004#B002",
@@ -245,7 +246,7 @@
       "doc_rank": 1,
       "top1_score": 0.7268,
       "embed_ms": 0.1,
-      "search_ms": 24.3,
+      "search_ms": 16.3,
       "top5": [
         [
           "guide_005#B000",
@@ -278,7 +279,7 @@
       "doc_rank": 1,
       "top1_score": 0.7843,
       "embed_ms": 0.1,
-      "search_ms": 15.7,
+      "search_ms": 16.0,
       "top5": [
         [
           "guide_006#B000",
@@ -311,7 +312,7 @@
       "doc_rank": 1,
       "top1_score": 0.684,
       "embed_ms": 0.1,
-      "search_ms": 15.5,
+      "search_ms": 15.0,
       "top5": [
         [
           "guide_007#B002",
@@ -344,7 +345,7 @@
       "doc_rank": 1,
       "top1_score": 0.7238,
       "embed_ms": 0.1,
-      "search_ms": 15.1,
+      "search_ms": 14.9,
       "top5": [
         [
           "guide_007#B003",
@@ -377,7 +378,7 @@
       "doc_rank": 1,
       "top1_score": 0.6648,
       "embed_ms": 0.1,
-      "search_ms": 15.2,
+      "search_ms": 15.3,
       "top5": [
         [
           "pdf_005#B012",
@@ -410,7 +411,7 @@
       "doc_rank": 1,
       "top1_score": 0.6857,
       "embed_ms": 0.1,
-      "search_ms": 6.7,
+      "search_ms": 15.2,
       "top5": [
         [
           "kb_007#B000",
@@ -443,7 +444,7 @@
       "doc_rank": 1,
       "top1_score": 0.7716,
       "embed_ms": 0.1,
-      "search_ms": 24.0,
+      "search_ms": 4.9,
       "top5": [
         [
           "kb_016#B011",
@@ -475,8 +476,8 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7499,
-      "embed_ms": 0.1,
-      "search_ms": 15.7,
+      "embed_ms": 0.2,
+      "search_ms": 25.9,
       "top5": [
         [
           "kb_009#B000",
@@ -509,7 +510,7 @@
       "doc_rank": 1,
       "top1_score": 0.5905,
       "embed_ms": 0.1,
-      "search_ms": 5.9,
+      "search_ms": 4.6,
       "top5": [
         [
           "kb_026#B000",
@@ -542,7 +543,7 @@
       "doc_rank": 1,
       "top1_score": 0.739,
       "embed_ms": 0.1,
-      "search_ms": 25.3,
+      "search_ms": 4.9,
       "top5": [
         [
           "kb_029#B019",
@@ -575,7 +576,7 @@
       "doc_rank": 5,
       "top1_score": 0.6933,
       "embed_ms": 0.1,
-      "search_ms": 29.5,
+      "search_ms": 9.1,
       "top5": [
         [
           "kb_027#B002",
@@ -608,7 +609,7 @@
       "doc_rank": 1,
       "top1_score": 0.6794,
       "embed_ms": 0.1,
-      "search_ms": 15.8,
+      "search_ms": 27.0,
       "top5": [
         [
           "guide_008#B002",
@@ -641,7 +642,7 @@
       "doc_rank": 1,
       "top1_score": 0.67,
       "embed_ms": 0.1,
-      "search_ms": 30.5,
+      "search_ms": 15.1,
       "top5": [
         [
           "pdf_005#B003",
@@ -674,7 +675,7 @@
       "doc_rank": 1,
       "top1_score": 0.6696,
       "embed_ms": 0.1,
-      "search_ms": 15.7,
+      "search_ms": 16.4,
       "top5": [
         [
           "pdf_011#B003",
@@ -707,7 +708,7 @@
       "doc_rank": 1,
       "top1_score": 0.753,
       "embed_ms": 0.1,
-      "search_ms": 14.7,
+      "search_ms": 14.8,
       "top5": [
         [
           "pdf_009#B000",
@@ -740,7 +741,7 @@
       "doc_rank": 1,
       "top1_score": 0.767,
       "embed_ms": 0.1,
-      "search_ms": 15.4,
+      "search_ms": 16.0,
       "top5": [
         [
           "pdf_011#B018",
@@ -773,7 +774,7 @@
       "doc_rank": 1,
       "top1_score": 0.6781,
       "embed_ms": 0.1,
-      "search_ms": 15.1,
+      "search_ms": 15.6,
       "top5": [
         [
           "pdf_009#B001",
@@ -806,7 +807,7 @@
       "doc_rank": 1,
       "top1_score": 0.7065,
       "embed_ms": 0.1,
-      "search_ms": 15.7,
+      "search_ms": 14.9,
       "top5": [
         [
           "pdf_010#B025",
@@ -872,7 +873,7 @@
       "doc_rank": 1,
       "top1_score": 0.7515,
       "embed_ms": 0.1,
-      "search_ms": 15.8,
+      "search_ms": 15.2,
       "top5": [
         [
           "pdf_011#B019",
@@ -905,7 +906,7 @@
       "doc_rank": 1,
       "top1_score": 0.6387,
       "embed_ms": 0.1,
-      "search_ms": 10.1,
+      "search_ms": 15.7,
       "top5": [
         [
           "pdf_011#B003",
@@ -938,7 +939,7 @@
       "doc_rank": null,
       "top1_score": 0.5403,
       "embed_ms": 0.1,
-      "search_ms": 19.8,
+      "search_ms": 15.5,
       "top5": [
         [
           "kb_011#B021",
@@ -971,7 +972,7 @@
       "doc_rank": null,
       "top1_score": 0.6414,
       "embed_ms": 0.1,
-      "search_ms": 14.8,
+      "search_ms": 15.5,
       "top5": [
         [
           "kb_043#B054",
@@ -1004,7 +1005,7 @@
       "doc_rank": null,
       "top1_score": 0.3237,
       "embed_ms": 0.1,
-      "search_ms": 16.4,
+      "search_ms": 15.9,
       "top5": [
         [
           "kb_034#B006",
@@ -1096,7 +1097,7 @@
     },
     "latency_ms": {
       "embed_mean": 0.1,
-      "search_mean": 16.7
+      "search_mean": 15.5
     }
   }
 }
