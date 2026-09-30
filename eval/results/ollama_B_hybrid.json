@@ -16,7 +16,7 @@
       "top1_score": 0.7648,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 175.2,
+      "search_ms": 57.2,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -51,7 +51,7 @@
       "top1_score": 0.6748,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 100.4,
+      "search_ms": 44.8,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -85,8 +85,8 @@
       "doc_rank": 1,
       "top1_score": 0.6835,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 54.1,
+      "embed_ms": 0.2,
+      "search_ms": 32.8,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -116,21 +116,21 @@
       "type": "use_case",
       "lang": "fr",
       "query": "Je veux développer des applications iPhone, quel ordinateur acheter ?",
-      "rank": 1,
-      "doc_rank": 1,
-      "top1_score": 0.657,
+      "rank": 2,
+      "doc_rank": 2,
+      "top1_score": 0.4466,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 100.8,
+      "embed_ms": 0.2,
+      "search_ms": 35.2,
       "rerank_ms": 0.0,
       "top5": [
         [
-          "guide_002#B002",
-          0.657
-        ],
-        [
           "kb_042#B009",
           0.4466
+        ],
+        [
+          "guide_002#B002",
+          0.657
         ],
         [
           "guide_002#B001",
@@ -141,8 +141,8 @@
           0.4516
         ],
         [
-          "kb_043#B054",
-          0.424
+          "guide_002#B000",
+          0.5859
         ]
       ]
     },
@@ -155,8 +155,8 @@
       "doc_rank": 1,
       "top1_score": 0.6282,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 85.7,
+      "embed_ms": 0.2,
+      "search_ms": 43.0,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -190,8 +190,8 @@
       "doc_rank": 1,
       "top1_score": 0.5996,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 86.3,
+      "embed_ms": 0.3,
+      "search_ms": 34.1,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -211,8 +211,8 @@
           0.6855
         ],
         [
-          "kb_041#B012",
-          0.4803
+          "kb_017#B005",
+          0.6595
         ]
       ]
     },
@@ -225,8 +225,8 @@
       "doc_rank": 1,
       "top1_score": 0.7234,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 83.6,
+      "embed_ms": 0.2,
+      "search_ms": 34.3,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -260,8 +260,8 @@
       "doc_rank": 1,
       "top1_score": 0.7268,
       "top1_rerank_score": null,
-      "embed_ms": 0.2,
-      "search_ms": 58.8,
+      "embed_ms": 0.1,
+      "search_ms": 31.3,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -296,7 +296,7 @@
       "top1_score": 0.7843,
       "top1_rerank_score": null,
       "embed_ms": 0.2,
-      "search_ms": 88.7,
+      "search_ms": 29.2,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -308,12 +308,12 @@
           0.7677
         ],
         [
-          "guide_008#B004",
-          0.727
-        ],
-        [
           "guide_006#B002",
           0.6773
+        ],
+        [
+          "guide_008#B004",
+          0.727
         ],
         [
           "kb_043#B011",
@@ -326,21 +326,21 @@
       "type": "compatibility",
       "lang": "fr",
       "query": "Mon chargeur 65W peut-il charger un laptop livré avec un chargeur 100W ?",
-      "rank": 1,
+      "rank": 2,
       "doc_rank": 1,
-      "top1_score": 0.684,
+      "top1_score": 0.665,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 59.7,
+      "search_ms": 43.8,
       "rerank_ms": 0.0,
       "top5": [
         [
-          "guide_007#B002",
-          0.684
-        ],
-        [
           "guide_007#B006",
           0.665
+        ],
+        [
+          "guide_007#B002",
+          0.684
         ],
         [
           "kb_012#B027",
@@ -366,7 +366,7 @@
       "top1_score": 0.6583,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 65.7,
+      "search_ms": 46.5,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -386,8 +386,8 @@
           0.6978
         ],
         [
-          "guide_007#B001",
-          0.673
+          "kb_033#B002",
+          0.535
         ]
       ]
     },
@@ -400,8 +400,8 @@
       "doc_rank": 1,
       "top1_score": 0.5874,
       "top1_rerank_score": null,
-      "embed_ms": 0.2,
-      "search_ms": 64.6,
+      "embed_ms": 0.1,
+      "search_ms": 32.8,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -435,8 +435,8 @@
       "doc_rank": 1,
       "top1_score": 0.6285,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 53.3,
+      "embed_ms": 0.2,
+      "search_ms": 35.1,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -471,7 +471,7 @@
       "top1_score": 0.7034,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 85.4,
+      "search_ms": 39.7,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -505,8 +505,8 @@
       "doc_rank": 1,
       "top1_score": 0.693,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 51.3,
+      "embed_ms": 0.2,
+      "search_ms": 31.4,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -541,7 +541,7 @@
       "top1_score": 0.424,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 49.6,
+      "search_ms": 30.1,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -576,7 +576,7 @@
       "top1_score": 0.7342,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 62.2,
+      "search_ms": 43.4,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -611,7 +611,7 @@
       "top1_score": 0.6933,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 58.2,
+      "search_ms": 37.3,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -646,7 +646,7 @@
       "top1_score": 0.6794,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 41.9,
+      "search_ms": 32.3,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -658,12 +658,12 @@
           0.4995
         ],
         [
-          "kb_020#B005",
-          0.5857
-        ],
-        [
           "kb_020#B000",
           0.5528
+        ],
+        [
+          "kb_020#B005",
+          0.5857
         ],
         [
           "kb_043#B019",
@@ -680,8 +680,8 @@
       "doc_rank": 1,
       "top1_score": 0.67,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 34.4,
+      "embed_ms": 0.2,
+      "search_ms": 31.2,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -716,7 +716,7 @@
       "top1_score": 0.6696,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 42.2,
+      "search_ms": 32.0,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -750,8 +750,8 @@
       "doc_rank": 1,
       "top1_score": 0.753,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 39.8,
+      "embed_ms": 0.2,
+      "search_ms": 34.9,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -785,8 +785,8 @@
       "doc_rank": 1,
       "top1_score": 0.767,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 54.6,
+      "embed_ms": 0.2,
+      "search_ms": 50.5,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -821,7 +821,7 @@
       "top1_score": 0.6781,
       "top1_rerank_score": null,
       "embed_ms": 0.2,
-      "search_ms": 46.1,
+      "search_ms": 42.4,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -856,7 +856,7 @@
       "top1_score": 0.665,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 34.6,
+      "search_ms": 33.9,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -891,7 +891,7 @@
       "top1_score": 0.649,
       "top1_rerank_score": null,
       "embed_ms": 0.2,
-      "search_ms": 36.0,
+      "search_ms": 33.7,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -907,12 +907,12 @@
           0.592
         ],
         [
-          "pdf_005#B005",
-          0.6044
-        ],
-        [
           "guide_007#B005",
           0.3875
+        ],
+        [
+          "pdf_005#B005",
+          0.6044
         ]
       ]
     },
@@ -925,8 +925,8 @@
       "doc_rank": 1,
       "top1_score": 0.7515,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 33.8,
+      "embed_ms": 0.2,
+      "search_ms": 34.6,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -956,29 +956,29 @@
       "type": "cross_lingual",
       "lang": "fr",
       "query": "La mémoire du Dell XPS 14 est-elle soudée ?",
-      "rank": 1,
+      "rank": 2,
       "doc_rank": 1,
-      "top1_score": 0.6387,
+      "top1_score": 0.4887,
       "top1_rerank_score": null,
-      "embed_ms": 0.3,
-      "search_ms": 40.0,
+      "embed_ms": 0.2,
+      "search_ms": 56.9,
       "rerank_ms": 0.0,
       "top5": [
-        [
-          "pdf_011#B003",
-          0.6387
-        ],
         [
           "pdf_011#B016",
           0.4887
         ],
         [
-          "pdf_011#B001",
-          0.5904
+          "pdf_011#B003",
+          0.6387
         ],
         [
           "pdf_011#B013",
           0.5051
+        ],
+        [
+          "pdf_011#B001",
+          0.5904
         ],
         [
           "pdf_011#B023",
@@ -993,19 +993,19 @@
       "query": "Quel est le prix de l'iPhone 16 en Tunisie ?",
       "rank": null,
       "doc_rank": null,
-      "top1_score": 0.4746,
+      "top1_score": 0.5403,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 49.5,
+      "search_ms": 36.2,
       "rerank_ms": 0.0,
       "top5": [
         [
-          "kb_043#B053",
-          0.4746
-        ],
-        [
           "kb_011#B021",
           0.5403
+        ],
+        [
+          "kb_043#B053",
+          0.4746
         ],
         [
           "kb_011#B056",
@@ -1031,7 +1031,7 @@
       "top1_score": 0.6414,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 50.2,
+      "search_ms": 30.2,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -1047,12 +1047,12 @@
           0.6044
         ],
         [
-          "kb_043#B016",
-          0.5075
-        ],
-        [
           "kb_043#B029",
           0.5858
+        ],
+        [
+          "kb_043#B016",
+          0.5075
         ]
       ]
     },
@@ -1065,8 +1065,8 @@
       "doc_rank": null,
       "top1_score": 0.3041,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 51.2,
+      "embed_ms": 0.2,
+      "search_ms": 37.7,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -1078,46 +1078,46 @@
           0.3237
         ],
         [
-          "kb_021#B030",
-          0.1975
-        ],
-        [
           "kb_027#B022",
           0.3101
         ],
         [
-          "kb_027#B004",
-          0.3043
+          "kb_021#B030",
+          0.1975
+        ],
+        [
+          "kb_005#B019",
+          0.1544
         ]
       ]
     }
   ],
   "metrics": {
     "overall": {
-      "hit@1": 0.75,
+      "hit@1": 0.643,
       "hit@3": 0.964,
       "hit@5": 1.0,
       "hit@10": 1.0,
-      "mrr": 0.854,
+      "mrr": 0.801,
       "doc_hit@5": 1.0,
       "n": 28
     },
     "by_type": {
       "compatibility": {
+        "hit@1": 0.333,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "hit@10": 1.0,
+        "mrr": 0.667,
+        "doc_hit@5": 1.0,
+        "n": 3
+      },
+      "cross_lingual": {
         "hit@1": 0.667,
         "hit@3": 1.0,
         "hit@5": 1.0,
         "hit@10": 1.0,
         "mrr": 0.833,
-        "doc_hit@5": 1.0,
-        "n": 3
-      },
-      "cross_lingual": {
-        "hit@1": 1.0,
-        "hit@3": 1.0,
-        "hit@5": 1.0,
-        "hit@10": 1.0,
-        "mrr": 1.0,
         "doc_hit@5": 1.0,
         "n": 3
       },
@@ -1140,26 +1140,26 @@
         "n": 6
       },
       "use_case": {
-        "hit@1": 0.778,
+        "hit@1": 0.667,
         "hit@3": 1.0,
         "hit@5": 1.0,
         "hit@10": 1.0,
-        "mrr": 0.87,
+        "mrr": 0.815,
         "doc_hit@5": 1.0,
         "n": 9
       }
     },
     "out_of_scope": {
       "oos_top1_max": 0.6414,
-      "oos_top1_mean": 0.473,
+      "oos_top1_mean": 0.495,
       "in_scope_top1_min": 0.424,
-      "in_scope_top1_mean": 0.677,
+      "in_scope_top1_mean": 0.664,
       "correct_top1_min": 0.424,
-      "in_scope_rejected_at_oos_max": 0.214
+      "in_scope_rejected_at_oos_max": 0.25
     },
     "latency_ms": {
-      "embed_mean": 0.1,
-      "search_mean": 62.5,
+      "embed_mean": 0.2,
+      "search_mean": 37.7,
       "rerank_mean": 0.0
     }
   }

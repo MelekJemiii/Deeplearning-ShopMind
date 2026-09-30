@@ -14,8 +14,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7096,
-      "embed_ms": 0.1,
-      "search_ms": 9.8,
+      "top1_rerank_score": null,
+      "embed_ms": 0.3,
+      "search_ms": 177.2,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "guide_001#A000",
@@ -47,8 +49,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.6382,
-      "embed_ms": 0.0,
-      "search_ms": 25.5,
+      "top1_rerank_score": null,
+      "embed_ms": 0.2,
+      "search_ms": 75.6,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "guide_001#A000",
@@ -80,8 +84,10 @@
       "rank": 4,
       "doc_rank": 4,
       "top1_score": 0.6768,
-      "embed_ms": 0.0,
-      "search_ms": 32.4,
+      "top1_rerank_score": null,
+      "embed_ms": 0.1,
+      "search_ms": 45.9,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "kb_041#A000",
@@ -113,8 +119,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7315,
-      "embed_ms": 0.0,
-      "search_ms": 10.0,
+      "top1_rerank_score": null,
+      "embed_ms": 0.1,
+      "search_ms": 74.5,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "guide_002#A001",
@@ -133,8 +141,8 @@
           0.6258
         ],
         [
-          "kb_011#A030",
-          0.6029
+          "kb_043#A005",
+          0.4571
         ]
       ]
     },
@@ -146,8 +154,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.6442,
-      "embed_ms": 0.0,
-      "search_ms": 20.5,
+      "top1_rerank_score": null,
+      "embed_ms": 0.1,
+      "search_ms": 97.1,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "guide_003#A000",
@@ -158,12 +168,12 @@
           0.5952
         ],
         [
-          "kb_012#A012",
-          0.6055
-        ],
-        [
           "kb_040#A024",
           0.4605
+        ],
+        [
+          "kb_012#A012",
+          0.6055
         ],
         [
           "kb_012#A008",
@@ -179,8 +189,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.5587,
-      "embed_ms": 0.0,
-      "search_ms": 31.3,
+      "top1_rerank_score": null,
+      "embed_ms": 0.2,
+      "search_ms": 74.5,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "guide_003#A000",
@@ -212,8 +224,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7334,
-      "embed_ms": 0.0,
-      "search_ms": 37.6,
+      "top1_rerank_score": null,
+      "embed_ms": 0.1,
+      "search_ms": 68.5,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "guide_004#A000",
@@ -245,8 +259,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7364,
+      "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 27.8,
+      "search_ms": 75.2,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "guide_005#A000",
@@ -278,8 +294,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7887,
-      "embed_ms": 0.0,
-      "search_ms": 27.4,
+      "top1_rerank_score": null,
+      "embed_ms": 0.1,
+      "search_ms": 87.2,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "guide_006#A000",
@@ -311,8 +329,10 @@
       "rank": 3,
       "doc_rank": 1,
       "top1_score": 0.6319,
-      "embed_ms": 0.0,
-      "search_ms": 30.6,
+      "top1_rerank_score": null,
+      "embed_ms": 0.1,
+      "search_ms": 64.5,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "guide_007#A001",
@@ -344,8 +364,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.6481,
-      "embed_ms": 0.1,
-      "search_ms": 34.9,
+      "top1_rerank_score": null,
+      "embed_ms": 0.2,
+      "search_ms": 68.7,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "guide_007#A001",
@@ -377,8 +399,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.6404,
-      "embed_ms": 0.0,
-      "search_ms": 28.7,
+      "top1_rerank_score": null,
+      "embed_ms": 0.1,
+      "search_ms": 57.8,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "pdf_005#A006",
@@ -410,8 +434,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.6077,
-      "embed_ms": 0.0,
-      "search_ms": 31.4,
+      "top1_rerank_score": null,
+      "embed_ms": 0.2,
+      "search_ms": 53.9,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "kb_007#A007",
@@ -443,8 +469,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7446,
-      "embed_ms": 0.1,
-      "search_ms": 29.7,
+      "top1_rerank_score": null,
+      "embed_ms": 0.2,
+      "search_ms": 68.4,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "kb_016#A000",
@@ -476,8 +504,10 @@
       "rank": 2,
       "doc_rank": 1,
       "top1_score": 0.716,
-      "embed_ms": 0.0,
-      "search_ms": 9.8,
+      "top1_rerank_score": null,
+      "embed_ms": 0.1,
+      "search_ms": 49.3,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "kb_009#A002",
@@ -492,12 +522,12 @@
           0.6775
         ],
         [
-          "kb_009#A001",
-          0.6906
-        ],
-        [
           "kb_009#A005",
           0.6656
+        ],
+        [
+          "kb_009#A001",
+          0.6906
         ]
       ]
     },
@@ -509,8 +539,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.5902,
-      "embed_ms": 0.0,
-      "search_ms": 22.7,
+      "top1_rerank_score": null,
+      "embed_ms": 0.2,
+      "search_ms": 45.3,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "kb_026#A001",
@@ -542,8 +574,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7442,
+      "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 29.1,
+      "search_ms": 69.9,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "kb_029#A000",
@@ -575,8 +609,10 @@
       "rank": 2,
       "doc_rank": 2,
       "top1_score": 0.6821,
-      "embed_ms": 0.0,
-      "search_ms": 30.9,
+      "top1_rerank_score": null,
+      "embed_ms": 0.1,
+      "search_ms": 49.2,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "kb_027#A001",
@@ -608,8 +644,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.5715,
-      "embed_ms": 0.0,
-      "search_ms": 14.2,
+      "top1_rerank_score": null,
+      "embed_ms": 0.1,
+      "search_ms": 45.6,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "guide_008#A001",
@@ -641,8 +679,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.6366,
-      "embed_ms": 0.0,
-      "search_ms": 10.5,
+      "top1_rerank_score": null,
+      "embed_ms": 0.2,
+      "search_ms": 62.3,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "pdf_005#A002",
@@ -674,8 +714,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.6759,
-      "embed_ms": 0.0,
-      "search_ms": 13.0,
+      "top1_rerank_score": null,
+      "embed_ms": 0.2,
+      "search_ms": 38.0,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "pdf_011#A003",
@@ -707,20 +749,22 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7528,
-      "embed_ms": 0.1,
-      "search_ms": 16.4,
+      "top1_rerank_score": null,
+      "embed_ms": 0.2,
+      "search_ms": 39.4,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "pdf_009#A000",
           0.7528
         ],
         [
-          "pdf_009#A001",
-          0.7193
-        ],
-        [
           "pdf_010#A013",
           0.6116
+        ],
+        [
+          "pdf_009#A001",
+          0.7193
         ],
         [
           "kb_012#A018",
@@ -740,8 +784,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7649,
+      "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 11.7,
+      "search_ms": 47.5,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "pdf_011#A013",
@@ -773,8 +819,10 @@
       "rank": 2,
       "doc_rank": 1,
       "top1_score": 0.684,
+      "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 27.3,
+      "search_ms": 36.2,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "pdf_009#A001",
@@ -806,8 +854,10 @@
       "rank": 3,
       "doc_rank": 1,
       "top1_score": 0.6922,
-      "embed_ms": 0.0,
-      "search_ms": 8.6,
+      "top1_rerank_score": null,
+      "embed_ms": 0.1,
+      "search_ms": 37.3,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "pdf_010#A001",
@@ -839,8 +889,10 @@
       "rank": 3,
       "doc_rank": 2,
       "top1_score": 0.449,
-      "embed_ms": 0.1,
-      "search_ms": 21.6,
+      "top1_rerank_score": null,
+      "embed_ms": 0.2,
+      "search_ms": 34.9,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "guide_004#A000",
@@ -872,8 +924,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7378,
-      "embed_ms": 0.0,
-      "search_ms": 32.4,
+      "top1_rerank_score": null,
+      "embed_ms": 0.1,
+      "search_ms": 36.1,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "pdf_011#A014",
@@ -905,8 +959,10 @@
       "rank": 2,
       "doc_rank": 1,
       "top1_score": 0.5821,
-      "embed_ms": 0.0,
-      "search_ms": 30.1,
+      "top1_rerank_score": null,
+      "embed_ms": 0.2,
+      "search_ms": 42.4,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "pdf_011#A017",
@@ -917,12 +973,12 @@
           0.6392
         ],
         [
-          "pdf_011#A000",
-          0.4987
-        ],
-        [
           "pdf_011#A004",
           0.5927
+        ],
+        [
+          "pdf_011#A000",
+          0.4987
         ],
         [
           "pdf_011#A013",
@@ -938,20 +994,22 @@
       "rank": null,
       "doc_rank": null,
       "top1_score": 0.5036,
-      "embed_ms": 0.0,
-      "search_ms": 31.3,
+      "top1_rerank_score": null,
+      "embed_ms": 0.2,
+      "search_ms": 35.2,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "kb_034#A005",
           0.5036
         ],
         [
-          "kb_011#A012",
-          0.4802
-        ],
-        [
           "kb_043#A044",
           0.4469
+        ],
+        [
+          "kb_011#A012",
+          0.4802
         ],
         [
           "kb_011#A013",
@@ -971,8 +1029,10 @@
       "rank": null,
       "doc_rank": null,
       "top1_score": 0.607,
-      "embed_ms": 0.0,
-      "search_ms": 32.6,
+      "top1_rerank_score": null,
+      "embed_ms": 0.1,
+      "search_ms": 55.0,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "kb_043#A045",
@@ -1004,8 +1064,10 @@
       "rank": null,
       "doc_rank": null,
       "top1_score": 0.2515,
-      "embed_ms": 0.0,
-      "search_ms": 28.9,
+      "top1_rerank_score": null,
+      "embed_ms": 0.1,
+      "search_ms": 40.4,
+      "rerank_ms": 0.0,
       "top5": [
         [
           "kb_006#A017",
@@ -1024,8 +1086,8 @@
           0.3251
         ],
         [
-          "pdf_008#A005",
-          0.2912
+          "pdf_011#A003",
+          0.3123
         ]
       ]
     }
@@ -1096,8 +1158,9 @@
       "in_scope_rejected_at_oos_max": 0.179
     },
     "latency_ms": {
-      "embed_mean": 0.0,
-      "search_mean": 24.2
+      "embed_mean": 0.1,
+      "search_mean": 59.8,
+      "rerank_mean": 0.0
     }
   }
 }

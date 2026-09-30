@@ -15,7 +15,7 @@
     {
       "parameters": {
         "mode": "raw",
-        "jsonOutput": "{\n  \"question\": \"Je veux un laptop gaming, quel écran choisir ?\",\n  \"language\": \"fr\",\n  \"needs\": {\n    \"intent\": \"recommend\",\n    \"category\": \"laptop\",\n    \"budget_tnd\": {\"min\": null, \"max\": 4000},\n    \"use_cases\": [\"gaming\"],\n    \"must_have\": [],\n    \"brand_prefs\": [],\n    \"brand_excluded\": []\n  }\n}",
+        "jsonOutput": "{\n  \"question\": \"Je cherche un laptop pour la data science, budget 3500 dt\",\n  \"language\": \"fr\",\n  \"needs\": {\n    \"intent\": \"recommend\",\n    \"category\": \"laptop\",\n    \"budget_tnd\": {\"min\": null, \"max\": 3500},\n    \"use_cases\": [\"data science\"],\n    \"must_have\": [],\n    \"brand_prefs\": [],\n    \"brand_excluded\": []\n  }\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.set",
@@ -191,7 +191,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "2c53c06a-bc53-4453-ab1b-ecd84e357be5",
+  "versionId": "edeaba48-575a-464b-8b35-721757323917",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "a73bb1ca61cbc25a95cd316c9ddc9ab0172dc30908c6ff8a7eeadbe99d80f4e2"

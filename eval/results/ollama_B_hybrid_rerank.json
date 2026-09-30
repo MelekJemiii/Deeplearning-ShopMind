@@ -15,9 +15,9 @@
       "doc_rank": 1,
       "top1_score": 0.7648,
       "top1_rerank_score": 0.9903,
-      "embed_ms": 0.8,
-      "search_ms": 83.4,
-      "rerank_ms": 402.6,
+      "embed_ms": 0.1,
+      "search_ms": 45.4,
+      "rerank_ms": 399.8,
       "top5": [
         [
           "guide_001#B001",
@@ -51,8 +51,8 @@
       "top1_score": 0.6748,
       "top1_rerank_score": 0.9915,
       "embed_ms": 0.1,
-      "search_ms": 62.7,
-      "rerank_ms": 511.9,
+      "search_ms": 60.2,
+      "rerank_ms": 534.5,
       "top5": [
         [
           "guide_001#B003",
@@ -86,8 +86,8 @@
       "top1_score": 0.6835,
       "top1_rerank_score": 0.9096,
       "embed_ms": 0.2,
-      "search_ms": 58.1,
-      "rerank_ms": 501.4,
+      "search_ms": 54.2,
+      "rerank_ms": 479.5,
       "top5": [
         [
           "guide_002#B001",
@@ -120,9 +120,9 @@
       "doc_rank": 1,
       "top1_score": 0.657,
       "top1_rerank_score": 0.9607,
-      "embed_ms": 0.1,
-      "search_ms": 58.8,
-      "rerank_ms": 450.7,
+      "embed_ms": 0.3,
+      "search_ms": 46.8,
+      "rerank_ms": 395.5,
       "top5": [
         [
           "guide_002#B002",
@@ -154,10 +154,10 @@
       "rank": 2,
       "doc_rank": 1,
       "top1_score": 0.6282,
-      "top1_rerank_score": 0.1718,
-      "embed_ms": 0.1,
-      "search_ms": 55.7,
-      "rerank_ms": 543.5,
+      "top1_rerank_score": 0.172,
+      "embed_ms": 0.2,
+      "search_ms": 40.6,
+      "rerank_ms": 491.0,
       "top5": [
         [
           "guide_003#B000",
@@ -190,9 +190,9 @@
       "doc_rank": 1,
       "top1_score": 0.5996,
       "top1_rerank_score": 0.9057,
-      "embed_ms": 0.1,
-      "search_ms": 61.6,
-      "rerank_ms": 424.1,
+      "embed_ms": 0.2,
+      "search_ms": 40.1,
+      "rerank_ms": 602.7,
       "top5": [
         [
           "guide_003#B002",
@@ -226,8 +226,8 @@
       "top1_score": 0.7234,
       "top1_rerank_score": 0.9141,
       "embed_ms": 0.1,
-      "search_ms": 78.9,
-      "rerank_ms": 513.8,
+      "search_ms": 39.8,
+      "rerank_ms": 497.0,
       "top5": [
         [
           "guide_004#B002",
@@ -259,10 +259,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7268,
-      "top1_rerank_score": 0.8567,
-      "embed_ms": 0.1,
-      "search_ms": 55.6,
-      "rerank_ms": 548.8,
+      "top1_rerank_score": 0.8563,
+      "embed_ms": 0.2,
+      "search_ms": 52.9,
+      "rerank_ms": 570.8,
       "top5": [
         [
           "guide_005#B000",
@@ -296,8 +296,8 @@
       "top1_score": 0.7677,
       "top1_rerank_score": 0.9974,
       "embed_ms": 0.1,
-      "search_ms": 69.8,
-      "rerank_ms": 567.4,
+      "search_ms": 43.2,
+      "rerank_ms": 636.6,
       "top5": [
         [
           "guide_006#B001",
@@ -330,9 +330,9 @@
       "doc_rank": 1,
       "top1_score": 0.684,
       "top1_rerank_score": 0.949,
-      "embed_ms": 0.2,
-      "search_ms": 80.0,
-      "rerank_ms": 356.3,
+      "embed_ms": 0.1,
+      "search_ms": 40.8,
+      "rerank_ms": 444.7,
       "top5": [
         [
           "guide_007#B002",
@@ -365,9 +365,9 @@
       "doc_rank": 1,
       "top1_score": 0.7238,
       "top1_rerank_score": 0.9964,
-      "embed_ms": 0.2,
-      "search_ms": 69.2,
-      "rerank_ms": 403.0,
+      "embed_ms": 0.1,
+      "search_ms": 40.6,
+      "rerank_ms": 456.4,
       "top5": [
         [
           "guide_007#B003",
@@ -400,9 +400,9 @@
       "doc_rank": 1,
       "top1_score": 0.6648,
       "top1_rerank_score": 0.9583,
-      "embed_ms": 0.2,
-      "search_ms": 87.6,
-      "rerank_ms": 397.1,
+      "embed_ms": 0.1,
+      "search_ms": 41.1,
+      "rerank_ms": 457.5,
       "top5": [
         [
           "pdf_005#B012",
@@ -435,9 +435,9 @@
       "doc_rank": 1,
       "top1_score": 0.6857,
       "top1_rerank_score": 0.999,
-      "embed_ms": 0.2,
-      "search_ms": 62.3,
-      "rerank_ms": 483.0,
+      "embed_ms": 0.1,
+      "search_ms": 38.4,
+      "rerank_ms": 556.5,
       "top5": [
         [
           "kb_007#B000",
@@ -471,8 +471,8 @@
       "top1_score": 0.7716,
       "top1_rerank_score": 0.9976,
       "embed_ms": 0.1,
-      "search_ms": 48.0,
-      "rerank_ms": 596.8,
+      "search_ms": 40.0,
+      "rerank_ms": 675.4,
       "top5": [
         [
           "kb_016#B011",
@@ -505,9 +505,9 @@
       "doc_rank": 1,
       "top1_score": 0.7499,
       "top1_rerank_score": 0.9996,
-      "embed_ms": 0.1,
-      "search_ms": 61.6,
-      "rerank_ms": 426.7,
+      "embed_ms": 0.2,
+      "search_ms": 41.4,
+      "rerank_ms": 510.8,
       "top5": [
         [
           "kb_009#B000",
@@ -539,10 +539,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.424,
-      "top1_rerank_score": 0.5379,
-      "embed_ms": 0.1,
+      "top1_rerank_score": 0.5388,
+      "embed_ms": 0.2,
       "search_ms": 43.8,
-      "rerank_ms": 499.0,
+      "rerank_ms": 521.0,
       "top5": [
         [
           "guide_008#B003",
@@ -576,8 +576,8 @@
       "top1_score": 0.7342,
       "top1_rerank_score": 0.9981,
       "embed_ms": 0.1,
-      "search_ms": 68.6,
-      "rerank_ms": 479.9,
+      "search_ms": 39.4,
+      "rerank_ms": 532.6,
       "top5": [
         [
           "kb_029#B000",
@@ -609,10 +609,10 @@
       "rank": 2,
       "doc_rank": 2,
       "top1_score": 0.6592,
-      "top1_rerank_score": 0.8493,
+      "top1_rerank_score": 0.8492,
       "embed_ms": 0.1,
-      "search_ms": 44.5,
-      "rerank_ms": 619.6,
+      "search_ms": 41.8,
+      "rerank_ms": 663.6,
       "top5": [
         [
           "kb_021#B017",
@@ -645,9 +645,9 @@
       "doc_rank": 1,
       "top1_score": 0.6794,
       "top1_rerank_score": 0.951,
-      "embed_ms": 0.1,
-      "search_ms": 50.2,
-      "rerank_ms": 664.0,
+      "embed_ms": 0.2,
+      "search_ms": 54.1,
+      "rerank_ms": 600.5,
       "top5": [
         [
           "guide_008#B002",
@@ -679,10 +679,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.67,
-      "top1_rerank_score": 0.8299,
+      "top1_rerank_score": 0.8302,
       "embed_ms": 0.2,
-      "search_ms": 37.3,
-      "rerank_ms": 422.7,
+      "search_ms": 46.1,
+      "rerank_ms": 467.1,
       "top5": [
         [
           "pdf_005#B003",
@@ -716,8 +716,8 @@
       "top1_score": 0.6696,
       "top1_rerank_score": 0.9824,
       "embed_ms": 0.2,
-      "search_ms": 48.6,
-      "rerank_ms": 505.0,
+      "search_ms": 46.2,
+      "rerank_ms": 569.8,
       "top5": [
         [
           "pdf_011#B003",
@@ -750,9 +750,9 @@
       "doc_rank": 1,
       "top1_score": 0.753,
       "top1_rerank_score": 0.974,
-      "embed_ms": 0.1,
-      "search_ms": 41.9,
-      "rerank_ms": 476.3,
+      "embed_ms": 0.2,
+      "search_ms": 37.8,
+      "rerank_ms": 611.6,
       "top5": [
         [
           "pdf_009#B000",
@@ -786,8 +786,8 @@
       "top1_score": 0.767,
       "top1_rerank_score": 0.9801,
       "embed_ms": 0.2,
-      "search_ms": 60.1,
-      "rerank_ms": 482.8,
+      "search_ms": 40.9,
+      "rerank_ms": 528.9,
       "top5": [
         [
           "pdf_011#B018",
@@ -819,10 +819,10 @@
       "rank": 3,
       "doc_rank": 1,
       "top1_score": 0.6781,
-      "top1_rerank_score": 0.21,
-      "embed_ms": 0.1,
-      "search_ms": 45.5,
-      "rerank_ms": 534.4,
+      "top1_rerank_score": 0.2096,
+      "embed_ms": 0.2,
+      "search_ms": 62.0,
+      "rerank_ms": 636.1,
       "top5": [
         [
           "pdf_009#B001",
@@ -854,10 +854,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7065,
-      "top1_rerank_score": 0.7535,
+      "top1_rerank_score": 0.7527,
       "embed_ms": 0.1,
-      "search_ms": 45.0,
-      "rerank_ms": 430.8,
+      "search_ms": 43.5,
+      "rerank_ms": 425.5,
       "top5": [
         [
           "pdf_010#B025",
@@ -889,10 +889,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.649,
-      "top1_rerank_score": 0.8333,
-      "embed_ms": 0.4,
-      "search_ms": 37.6,
-      "rerank_ms": 360.6,
+      "top1_rerank_score": 0.8329,
+      "embed_ms": 0.1,
+      "search_ms": 42.1,
+      "rerank_ms": 502.3,
       "top5": [
         [
           "pdf_005#B003",
@@ -926,8 +926,8 @@
       "top1_score": 0.7515,
       "top1_rerank_score": 0.9833,
       "embed_ms": 0.1,
-      "search_ms": 48.3,
-      "rerank_ms": 519.0,
+      "search_ms": 40.7,
+      "rerank_ms": 585.8,
       "top5": [
         [
           "pdf_011#B019",
@@ -959,10 +959,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.6387,
-      "top1_rerank_score": 0.5772,
-      "embed_ms": 0.3,
-      "search_ms": 61.4,
-      "rerank_ms": 423.0,
+      "top1_rerank_score": 0.5765,
+      "embed_ms": 0.2,
+      "search_ms": 50.2,
+      "rerank_ms": 536.9,
       "top5": [
         [
           "pdf_011#B003",
@@ -995,9 +995,9 @@
       "doc_rank": null,
       "top1_score": 0.4746,
       "top1_rerank_score": 0.0002,
-      "embed_ms": 0.2,
-      "search_ms": 51.5,
-      "rerank_ms": 464.0,
+      "embed_ms": 0.4,
+      "search_ms": 51.3,
+      "rerank_ms": 387.7,
       "top5": [
         [
           "kb_043#B053",
@@ -1029,10 +1029,10 @@
       "rank": null,
       "doc_rank": null,
       "top1_score": 0.6414,
-      "top1_rerank_score": 0.1543,
+      "top1_rerank_score": 0.1542,
       "embed_ms": 0.1,
-      "search_ms": 65.0,
-      "rerank_ms": 528.1,
+      "search_ms": 44.7,
+      "rerank_ms": 666.8,
       "top5": [
         [
           "kb_043#B054",
@@ -1065,9 +1065,9 @@
       "doc_rank": null,
       "top1_score": 0.2997,
       "top1_rerank_score": 0.0003,
-      "embed_ms": 0.1,
-      "search_ms": 45.1,
-      "rerank_ms": 723.1,
+      "embed_ms": 0.2,
+      "search_ms": 45.8,
+      "rerank_ms": 983.7,
       "top5": [
         [
           "kb_027#B021",
@@ -1159,12 +1159,12 @@
     },
     "latency_ms": {
       "embed_mean": 0.2,
-      "search_mean": 57.7,
-      "rerank_mean": 492.2
+      "search_mean": 45.0,
+      "rerank_mean": 546.1
     },
     "out_of_scope_rerank": {
-      "oos_top1_max": 0.1543,
-      "in_scope_top1_min": 0.1718,
+      "oos_top1_max": 0.1542,
+      "in_scope_top1_min": 0.172,
       "in_scope_rejected_at_oos_max": 0.0
     }
   }

@@ -15,8 +15,8 @@
       "doc_rank": 1,
       "top1_score": 0.7648,
       "top1_rerank_score": null,
-      "embed_ms": 3.6,
-      "search_ms": 228.1,
+      "embed_ms": 0.1,
+      "search_ms": 52.7,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -51,7 +51,7 @@
       "top1_score": 0.6748,
       "top1_rerank_score": null,
       "embed_ms": 0.2,
-      "search_ms": 81.0,
+      "search_ms": 16.9,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -85,8 +85,8 @@
       "doc_rank": 1,
       "top1_score": 0.6835,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 55.4,
+      "embed_ms": 0.2,
+      "search_ms": 26.1,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -121,7 +121,7 @@
       "top1_score": 0.657,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 51.7,
+      "search_ms": 16.6,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -155,8 +155,8 @@
       "doc_rank": 1,
       "top1_score": 0.6337,
       "top1_rerank_score": null,
-      "embed_ms": 0.2,
-      "search_ms": 66.4,
+      "embed_ms": 0.1,
+      "search_ms": 15.6,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -190,8 +190,8 @@
       "doc_rank": null,
       "top1_score": 0.7148,
       "top1_rerank_score": null,
-      "embed_ms": 0.2,
-      "search_ms": 86.5,
+      "embed_ms": 0.1,
+      "search_ms": 20.5,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -226,7 +226,7 @@
       "top1_score": 0.7234,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 70.7,
+      "search_ms": 19.4,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -260,8 +260,8 @@
       "doc_rank": 1,
       "top1_score": 0.7268,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 55.4,
+      "embed_ms": 0.2,
+      "search_ms": 36.7,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -295,8 +295,8 @@
       "doc_rank": 1,
       "top1_score": 0.7843,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 103.1,
+      "embed_ms": 0.2,
+      "search_ms": 16.1,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -331,7 +331,7 @@
       "top1_score": 0.684,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 70.1,
+      "search_ms": 30.6,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -365,8 +365,8 @@
       "doc_rank": 1,
       "top1_score": 0.7238,
       "top1_rerank_score": null,
-      "embed_ms": 0.4,
-      "search_ms": 48.5,
+      "embed_ms": 0.1,
+      "search_ms": 18.8,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -400,8 +400,8 @@
       "doc_rank": 1,
       "top1_score": 0.6648,
       "top1_rerank_score": null,
-      "embed_ms": 0.2,
-      "search_ms": 60.2,
+      "embed_ms": 0.1,
+      "search_ms": 21.5,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -436,7 +436,7 @@
       "top1_score": 0.6857,
       "top1_rerank_score": null,
       "embed_ms": 0.2,
-      "search_ms": 48.8,
+      "search_ms": 18.6,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -471,7 +471,7 @@
       "top1_score": 0.7716,
       "top1_rerank_score": null,
       "embed_ms": 0.2,
-      "search_ms": 66.5,
+      "search_ms": 33.1,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -505,8 +505,8 @@
       "doc_rank": 1,
       "top1_score": 0.7499,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 71.6,
+      "embed_ms": 0.2,
+      "search_ms": 17.5,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -541,7 +541,7 @@
       "top1_score": 0.5905,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 24.1,
+      "search_ms": 17.1,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -576,7 +576,7 @@
       "top1_score": 0.739,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 30.6,
+      "search_ms": 19.1,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -610,8 +610,8 @@
       "doc_rank": 5,
       "top1_score": 0.6933,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 50.6,
+      "embed_ms": 0.2,
+      "search_ms": 19.6,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -645,8 +645,8 @@
       "doc_rank": 1,
       "top1_score": 0.6794,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 30.4,
+      "embed_ms": 0.2,
+      "search_ms": 19.8,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -680,8 +680,8 @@
       "doc_rank": 1,
       "top1_score": 0.67,
       "top1_rerank_score": null,
-      "embed_ms": 0.3,
-      "search_ms": 32.4,
+      "embed_ms": 0.2,
+      "search_ms": 25.7,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -715,8 +715,8 @@
       "doc_rank": 1,
       "top1_score": 0.6696,
       "top1_rerank_score": null,
-      "embed_ms": 0.2,
-      "search_ms": 48.6,
+      "embed_ms": 0.1,
+      "search_ms": 29.3,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -751,7 +751,7 @@
       "top1_score": 0.753,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 29.3,
+      "search_ms": 17.8,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -785,8 +785,8 @@
       "doc_rank": 1,
       "top1_score": 0.767,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 18.2,
+      "embed_ms": 0.2,
+      "search_ms": 28.7,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -820,8 +820,8 @@
       "doc_rank": 1,
       "top1_score": 0.6781,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 23.4,
+      "embed_ms": 0.8,
+      "search_ms": 14.3,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -856,7 +856,7 @@
       "top1_score": 0.7065,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 22.2,
+      "search_ms": 14.8,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -891,7 +891,7 @@
       "top1_score": 0.649,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 16.1,
+      "search_ms": 15.0,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -925,8 +925,8 @@
       "doc_rank": 1,
       "top1_score": 0.7515,
       "top1_rerank_score": null,
-      "embed_ms": 0.3,
-      "search_ms": 41.7,
+      "embed_ms": 0.1,
+      "search_ms": 14.7,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -961,7 +961,7 @@
       "top1_score": 0.6387,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 17.7,
+      "search_ms": 32.5,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -996,7 +996,7 @@
       "top1_score": 0.5403,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 37.1,
+      "search_ms": 15.1,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -1031,7 +1031,7 @@
       "top1_score": 0.6414,
       "top1_rerank_score": null,
       "embed_ms": 0.1,
-      "search_ms": 26.2,
+      "search_ms": 30.3,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -1065,8 +1065,8 @@
       "doc_rank": null,
       "top1_score": 0.3237,
       "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 24.7,
+      "embed_ms": 0.2,
+      "search_ms": 21.0,
       "rerank_ms": 0.0,
       "top5": [
         [
@@ -1158,8 +1158,8 @@
       "in_scope_rejected_at_oos_max": 0.107
     },
     "latency_ms": {
-      "embed_mean": 0.3,
-      "search_mean": 52.8,
+      "embed_mean": 0.2,
+      "search_mean": 22.4,
       "rerank_mean": 0.0
     }
   }

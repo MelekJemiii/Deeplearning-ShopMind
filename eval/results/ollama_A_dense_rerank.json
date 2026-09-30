@@ -1,8 +1,8 @@
 {
-  "run": "ollama_A",
+  "run": "ollama_A_dense_rerank",
   "provider": "ollama",
   "strategy": "A",
-  "mode": "dense",
+  "mode": "dense_rerank",
   "model": "bge-m3",
   "collection": "shopmind_kb_ollama_A",
   "rows": [
@@ -14,10 +14,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7096,
-      "top1_rerank_score": null,
-      "embed_ms": 2.6,
-      "search_ms": 183.7,
-      "rerank_ms": 0.0,
+      "top1_rerank_score": 0.9805,
+      "embed_ms": 0.1,
+      "search_ms": 20.3,
+      "rerank_ms": 2083.5,
       "top5": [
         [
           "guide_001#A000",
@@ -28,16 +28,16 @@
           0.6729
         ],
         [
-          "kb_001#A010",
-          0.6192
-        ],
-        [
           "guide_002#A000",
           0.5966
         ],
         [
-          "kb_001#A004",
-          0.5918
+          "kb_001#A006",
+          0.5893
+        ],
+        [
+          "kb_012#A013",
+          0.553
         ]
       ]
     },
@@ -46,33 +46,33 @@
       "type": "use_case",
       "lang": "fr",
       "query": "Est-ce qu'une carte graphique est nécessaire pour le deep learning ?",
-      "rank": 3,
-      "doc_rank": 3,
-      "top1_score": 0.66,
-      "top1_rerank_score": null,
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.6382,
+      "top1_rerank_score": 0.9716,
       "embed_ms": 0.2,
-      "search_ms": 75.1,
-      "rerank_ms": 0.0,
+      "search_ms": 27.5,
+      "rerank_ms": 1296.2,
       "top5": [
-        [
-          "kb_041#A003",
-          0.66
-        ],
-        [
-          "kb_041#A012",
-          0.6464
-        ],
         [
           "guide_001#A000",
           0.6382
         ],
         [
-          "kb_041#A004",
-          0.6348
-        ],
-        [
           "guide_001#A001",
           0.6238
+        ],
+        [
+          "kb_008#A016",
+          0.6154
+        ],
+        [
+          "kb_041#A000",
+          0.6129
+        ],
+        [
+          "kb_041#A012",
+          0.6464
         ]
       ]
     },
@@ -81,33 +81,33 @@
       "type": "use_case",
       "lang": "fr",
       "query": "Faut-il une carte graphique dédiée pour programmer ?",
-      "rank": 7,
-      "doc_rank": 7,
-      "top1_score": 0.6835,
-      "top1_rerank_score": null,
+      "rank": 2,
+      "doc_rank": 2,
+      "top1_score": 0.661,
+      "top1_rerank_score": 0.759,
       "embed_ms": 0.2,
-      "search_ms": 57.1,
-      "rerank_ms": 0.0,
+      "search_ms": 45.7,
+      "rerank_ms": 1189.8,
       "top5": [
         [
-          "kb_041#A012",
-          0.6835
+          "kb_041#A001",
+          0.661
+        ],
+        [
+          "guide_002#A000",
+          0.6491
+        ],
+        [
+          "kb_041#A002",
+          0.6608
+        ],
+        [
+          "kb_041#A013",
+          0.626
         ],
         [
           "kb_041#A000",
           0.6768
-        ],
-        [
-          "kb_041#A003",
-          0.6644
-        ],
-        [
-          "kb_041#A004",
-          0.6634
-        ],
-        [
-          "kb_041#A001",
-          0.661
         ]
       ]
     },
@@ -119,10 +119,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7315,
-      "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 68.8,
-      "rerank_ms": 0.0,
+      "top1_rerank_score": 0.9585,
+      "embed_ms": 0.2,
+      "search_ms": 50.0,
+      "rerank_ms": 1354.1,
       "top5": [
         [
           "guide_002#A001",
@@ -133,16 +133,16 @@
           0.6258
         ],
         [
-          "kb_011#A030",
-          0.6029
+          "kb_011#A001",
+          0.5426
         ],
         [
-          "kb_011#A000",
-          0.5706
+          "kb_011#A011",
+          0.5569
         ],
         [
-          "kb_011#A002",
-          0.5619
+          "kb_011#A014",
+          0.552
         ]
       ]
     },
@@ -154,30 +154,30 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.6442,
-      "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 71.6,
-      "rerank_ms": 0.0,
+      "top1_rerank_score": 0.3626,
+      "embed_ms": 0.2,
+      "search_ms": 38.3,
+      "rerank_ms": 1085.4,
       "top5": [
         [
           "guide_003#A000",
           0.6442
         ],
         [
+          "pdf_005#A002",
+          0.57
+        ],
+        [
+          "kb_012#A023",
+          0.5777
+        ],
+        [
           "kb_012#A012",
           0.6055
         ],
         [
-          "kb_012#A008",
-          0.6016
-        ],
-        [
-          "kb_014#A003",
-          0.5972
-        ],
-        [
-          "guide_003#A001",
-          0.5952
+          "kb_012#A005",
+          0.5804
         ]
       ]
     },
@@ -186,33 +186,33 @@
       "type": "use_case",
       "lang": "fr",
       "query": "Quel taux de rafraîchissement d'écran choisir pour jouer ?",
-      "rank": null,
-      "doc_rank": 7,
-      "top1_score": 0.6765,
-      "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 85.2,
-      "rerank_ms": 0.0,
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.5587,
+      "top1_rerank_score": 0.6538,
+      "embed_ms": 0.3,
+      "search_ms": 28.1,
+      "rerank_ms": 1082.2,
       "top5": [
         [
-          "kb_017#A005",
-          0.6765
+          "guide_003#A000",
+          0.5587
+        ],
+        [
+          "kb_017#A004",
+          0.6443
         ],
         [
           "kb_017#A002",
           0.6645
         ],
         [
-          "kb_017#A007",
-          0.6479
+          "kb_017#A003",
+          0.6317
         ],
         [
-          "kb_017#A008",
-          0.646
-        ],
-        [
-          "kb_017#A004",
-          0.6443
+          "kb_017#A005",
+          0.6765
         ]
       ]
     },
@@ -224,30 +224,30 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7334,
-      "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 67.2,
-      "rerank_ms": 0.0,
+      "top1_rerank_score": 0.9742,
+      "embed_ms": 0.2,
+      "search_ms": 33.1,
+      "rerank_ms": 1062.4,
       "top5": [
         [
           "guide_004#A000",
           0.7334
         ],
         [
-          "kb_031#A038",
-          0.5667
+          "guide_006#A001",
+          0.5589
+        ],
+        [
+          "kb_018#A008",
+          0.5517
+        ],
+        [
+          "kb_018#A004",
+          0.545
         ],
         [
           "kb_017#A008",
           0.565
-        ],
-        [
-          "kb_018#A003",
-          0.5611
-        ],
-        [
-          "guide_006#A001",
-          0.5589
         ]
       ]
     },
@@ -259,30 +259,30 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7364,
-      "top1_rerank_score": null,
-      "embed_ms": 0.2,
-      "search_ms": 41.1,
-      "rerank_ms": 0.0,
+      "top1_rerank_score": 0.8454,
+      "embed_ms": 0.1,
+      "search_ms": 25.0,
+      "rerank_ms": 935.0,
       "top5": [
         [
           "guide_005#A000",
           0.7364
         ],
         [
+          "guide_002#A000",
+          0.5912
+        ],
+        [
           "guide_005#A001",
           0.6996
         ],
         [
-          "kb_012#A030",
-          0.6374
-        ],
-        [
-          "kb_012#A022",
-          0.6271
-        ],
-        [
           "guide_001#A001",
           0.6213
+        ],
+        [
+          "guide_001#A000",
+          0.5928
         ]
       ]
     },
@@ -294,10 +294,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7887,
-      "top1_rerank_score": null,
-      "embed_ms": 0.3,
-      "search_ms": 51.1,
-      "rerank_ms": 0.0,
+      "top1_rerank_score": 0.9956,
+      "embed_ms": 0.2,
+      "search_ms": 22.1,
+      "rerank_ms": 1059.9,
       "top5": [
         [
           "guide_006#A000",
@@ -308,16 +308,16 @@
           0.642
         ],
         [
-          "kb_022#A002",
-          0.6399
+          "kb_022#A020",
+          0.6102
         ],
         [
-          "kb_021#A010",
-          0.628
+          "kb_022#A001",
+          0.6062
         ],
         [
-          "guide_006#A001",
-          0.6279
+          "kb_043#A010",
+          0.6134
         ]
       ]
     },
@@ -326,33 +326,33 @@
       "type": "compatibility",
       "lang": "fr",
       "query": "Mon chargeur 65W peut-il charger un laptop livré avec un chargeur 100W ?",
-      "rank": 2,
-      "doc_rank": 2,
-      "top1_score": 0.639,
-      "top1_rerank_score": null,
-      "embed_ms": 0.2,
-      "search_ms": 44.6,
-      "rerank_ms": 0.0,
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.6339,
+      "top1_rerank_score": 0.8781,
+      "embed_ms": 0.1,
+      "search_ms": 23.1,
+      "rerank_ms": 966.1,
       "top5": [
-        [
-          "kb_012#A019",
-          0.639
-        ],
         [
           "guide_007#A000",
           0.6339
-        ],
-        [
-          "guide_007#A001",
-          0.6319
         ],
         [
           "pdf_008#A006",
           0.6311
         ],
         [
-          "kb_012#A017",
-          0.6049
+          "guide_007#A001",
+          0.6319
+        ],
+        [
+          "pdf_002#A004",
+          0.5577
+        ],
+        [
+          "kb_012#A019",
+          0.639
         ]
       ]
     },
@@ -364,10 +364,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7173,
-      "top1_rerank_score": null,
+      "top1_rerank_score": 0.989,
       "embed_ms": 0.1,
-      "search_ms": 39.4,
-      "rerank_ms": 0.0,
+      "search_ms": 31.3,
+      "rerank_ms": 927.6,
       "top5": [
         [
           "guide_007#A000",
@@ -378,16 +378,16 @@
           0.6706
         ],
         [
-          "kb_028#A005",
-          0.6539
-        ],
-        [
           "guide_007#A001",
           0.6481
         ],
         [
-          "kb_028#A003",
-          0.6293
+          "kb_033#A002",
+          0.5949
+        ],
+        [
+          "kb_028#A000",
+          0.6267
         ]
       ]
     },
@@ -396,33 +396,33 @@
       "type": "compatibility",
       "lang": "en",
       "query": "Can I charge the Legion 5 over USB-C?",
-      "rank": 1,
+      "rank": 2,
       "doc_rank": 1,
-      "top1_score": 0.6404,
-      "top1_rerank_score": null,
+      "top1_score": 0.6074,
+      "top1_rerank_score": 0.9271,
       "embed_ms": 0.1,
-      "search_ms": 39.8,
-      "rerank_ms": 0.0,
+      "search_ms": 21.2,
+      "rerank_ms": 949.4,
       "top5": [
-        [
-          "pdf_005#A006",
-          0.6404
-        ],
-        [
-          "pdf_005#A004",
-          0.6204
-        ],
-        [
-          "pdf_005#A003",
-          0.6118
-        ],
         [
           "pdf_005#A007",
           0.6074
         ],
         [
+          "pdf_005#A006",
+          0.6404
+        ],
+        [
           "pdf_005#A000",
           0.5965
+        ],
+        [
+          "pdf_005#A002",
+          0.5614
+        ],
+        [
+          "kb_028#A000",
+          0.5731
         ]
       ]
     },
@@ -434,30 +434,30 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.6878,
-      "top1_rerank_score": null,
+      "top1_rerank_score": 0.9976,
       "embed_ms": 0.1,
-      "search_ms": 45.9,
-      "rerank_ms": 0.0,
+      "search_ms": 46.5,
+      "rerank_ms": 1019.9,
       "top5": [
         [
           "kb_007#A000",
           0.6878
         ],
         [
-          "kb_007#A001",
-          0.644
+          "kb_007#A007",
+          0.6077
         ],
         [
-          "kb_007#A010",
-          0.6302
+          "kb_007#A004",
+          0.6117
+        ],
+        [
+          "kb_005#A011",
+          0.474
         ],
         [
           "kb_007#A005",
           0.6216
-        ],
-        [
-          "kb_007#A002",
-          0.6138
         ]
       ]
     },
@@ -466,21 +466,21 @@
       "type": "definition",
       "lang": "en",
       "query": "How is an OLED display different from an LCD?",
-      "rank": 1,
+      "rank": 2,
       "doc_rank": 1,
-      "top1_score": 0.7446,
-      "top1_rerank_score": null,
-      "embed_ms": 0.3,
-      "search_ms": 54.5,
-      "rerank_ms": 0.0,
+      "top1_score": 0.7351,
+      "top1_rerank_score": 0.9907,
+      "embed_ms": 0.1,
+      "search_ms": 32.6,
+      "rerank_ms": 1127.8,
       "top5": [
-        [
-          "kb_016#A000",
-          0.7446
-        ],
         [
           "kb_016#A010",
           0.7351
+        ],
+        [
+          "kb_016#A000",
+          0.7446
         ],
         [
           "kb_016#A023",
@@ -504,10 +504,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7485,
-      "top1_rerank_score": null,
-      "embed_ms": 0.7,
-      "search_ms": 58.4,
-      "rerank_ms": 0.0,
+      "top1_rerank_score": 0.9985,
+      "embed_ms": 0.2,
+      "search_ms": 37.9,
+      "rerank_ms": 1164.2,
       "top5": [
         [
           "kb_009#A000",
@@ -538,12 +538,16 @@
       "query": "What does the IP68 rating mean?",
       "rank": 1,
       "doc_rank": 1,
-      "top1_score": 0.5902,
-      "top1_rerank_score": null,
+      "top1_score": 0.4259,
+      "top1_rerank_score": 0.1364,
       "embed_ms": 0.1,
-      "search_ms": 56.5,
-      "rerank_ms": 0.0,
+      "search_ms": 32.5,
+      "rerank_ms": 1199.3,
       "top5": [
+        [
+          "guide_008#A001",
+          0.4259
+        ],
         [
           "kb_026#A001",
           0.5902
@@ -553,16 +557,12 @@
           0.5715
         ],
         [
-          "kb_026#A002",
-          0.5408
+          "pdf_006#A007",
+          0.4491
         ],
         [
           "kb_026#A003",
           0.4998
-        ],
-        [
-          "pdf_007#A010",
-          0.4782
         ]
       ]
     },
@@ -573,31 +573,31 @@
       "query": "What is the difference between Thunderbolt 4 and USB4?",
       "rank": 1,
       "doc_rank": 1,
-      "top1_score": 0.7442,
-      "top1_rerank_score": null,
-      "embed_ms": 0.3,
-      "search_ms": 37.1,
-      "rerank_ms": 0.0,
+      "top1_score": 0.7056,
+      "top1_rerank_score": 0.9976,
+      "embed_ms": 0.1,
+      "search_ms": 45.7,
+      "rerank_ms": 950.1,
       "top5": [
+        [
+          "kb_030#A011",
+          0.7056
+        ],
         [
           "kb_029#A000",
           0.7442
         ],
         [
-          "kb_029#A011",
-          0.7319
-        ],
-        [
-          "kb_029#A002",
-          0.7287
-        ],
-        [
-          "kb_029#A017",
-          0.7245
-        ],
-        [
           "kb_029#A001",
           0.7209
+        ],
+        [
+          "kb_029#A016",
+          0.7111
+        ],
+        [
+          "kb_029#A011",
+          0.7319
         ]
       ]
     },
@@ -606,33 +606,33 @@
       "type": "definition",
       "lang": "en",
       "query": "How does wireless phone charging work?",
-      "rank": 5,
-      "doc_rank": 5,
-      "top1_score": 0.6821,
-      "top1_rerank_score": null,
+      "rank": 1,
+      "doc_rank": 1,
+      "top1_score": 0.5851,
+      "top1_rerank_score": 0.8709,
       "embed_ms": 0.1,
-      "search_ms": 33.9,
-      "rerank_ms": 0.0,
+      "search_ms": 28.4,
+      "rerank_ms": 1082.4,
       "top5": [
         [
-          "kb_027#A001",
-          0.6821
-        ],
-        [
-          "kb_033#A000",
-          0.6388
+          "kb_034#A003",
+          0.5851
         ],
         [
           "kb_021#A009",
           0.6303
         ],
         [
-          "kb_033#A001",
-          0.6089
-        ],
-        [
           "kb_034#A000",
           0.6087
+        ],
+        [
+          "kb_027#A001",
+          0.6821
+        ],
+        [
+          "kb_033#A002",
+          0.599
         ]
       ]
     },
@@ -644,10 +644,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.5715,
-      "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 45.6,
-      "rerank_ms": 0.0,
+      "top1_rerank_score": 0.9499,
+      "embed_ms": 0.3,
+      "search_ms": 19.3,
+      "rerank_ms": 911.4,
       "top5": [
         [
           "guide_008#A001",
@@ -662,12 +662,12 @@
           0.5595
         ],
         [
-          "kb_020#A002",
-          0.5217
-        ],
-        [
           "kb_019#A011",
           0.5166
+        ],
+        [
+          "kb_043#A013",
+          0.4914
         ]
       ]
     },
@@ -679,30 +679,30 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.6366,
-      "top1_rerank_score": null,
-      "embed_ms": 0.1,
-      "search_ms": 40.4,
-      "rerank_ms": 0.0,
+      "top1_rerank_score": 0.7619,
+      "embed_ms": 0.3,
+      "search_ms": 47.6,
+      "rerank_ms": 855.2,
       "top5": [
         [
           "pdf_005#A002",
           0.6366
         ],
         [
-          "pdf_005#A005",
-          0.5919
+          "pdf_006#A001",
+          0.4986
         ],
         [
-          "pdf_005#A001",
-          0.5834
+          "pdf_005#A007",
+          0.5609
         ],
         [
-          "pdf_005#A003",
-          0.5809
+          "pdf_005#A006",
+          0.5275
         ],
         [
-          "pdf_005#A004",
-          0.562
+          "pdf_005#A000",
+          0.5305
         ]
       ]
     },
@@ -714,30 +714,30 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.6759,
-      "top1_rerank_score": null,
-      "embed_ms": 0.3,
-      "search_ms": 36.2,
-      "rerank_ms": 0.0,
+      "top1_rerank_score": 0.9507,
+      "embed_ms": 0.2,
+      "search_ms": 20.5,
+      "rerank_ms": 883.8,
       "top5": [
         [
           "pdf_011#A003",
           0.6759
         ],
         [
-          "pdf_011#A001",
-          0.6305
-        ],
-        [
-          "pdf_011#A002",
-          0.625
-        ],
-        [
-          "pdf_011#A008",
-          0.6207
+          "pdf_011#A005",
+          0.605
         ],
         [
           "pdf_011#A004",
           0.6197
+        ],
+        [
+          "kb_012#A013",
+          0.5616
+        ],
+        [
+          "pdf_011#A002",
+          0.625
         ]
       ]
     },
@@ -749,30 +749,30 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7528,
-      "top1_rerank_score": null,
+      "top1_rerank_score": 0.9678,
       "embed_ms": 0.1,
-      "search_ms": 28.4,
-      "rerank_ms": 0.0,
+      "search_ms": 16.2,
+      "rerank_ms": 873.6,
       "top5": [
         [
           "pdf_009#A000",
           0.7528
         ],
         [
-          "pdf_009#A001",
-          0.7193
-        ],
-        [
           "pdf_010#A013",
           0.6116
+        ],
+        [
+          "pdf_012#A003",
+          0.5818
         ],
         [
           "pdf_004#A002",
           0.5961
         ],
         [
-          "pdf_012#A004",
-          0.5915
+          "pdf_002#A004",
+          0.553
         ]
       ]
     },
@@ -783,19 +783,19 @@
       "query": "Which power adapter does the Dell XPS 14 need for full performance?",
       "rank": 1,
       "doc_rank": 1,
-      "top1_score": 0.7649,
-      "top1_rerank_score": null,
-      "embed_ms": 0.3,
-      "search_ms": 30.2,
-      "rerank_ms": 0.0,
+      "top1_score": 0.7284,
+      "top1_rerank_score": 0.9704,
+      "embed_ms": 0.1,
+      "search_ms": 37.4,
+      "rerank_ms": 920.4,
       "top5": [
-        [
-          "pdf_011#A013",
-          0.7649
-        ],
         [
           "pdf_011#A012",
           0.7284
+        ],
+        [
+          "pdf_011#A013",
+          0.7649
         ],
         [
           "pdf_011#A014",
@@ -806,8 +806,8 @@
           0.6833
         ],
         [
-          "pdf_011#A001",
-          0.6711
+          "pdf_011#A011",
+          0.6218
         ]
       ]
     },
@@ -817,20 +817,24 @@
       "lang": "en",
       "query": "What color gamut does the HP Victus 15 screen cover?",
       "rank": 2,
-      "doc_rank": 1,
-      "top1_score": 0.684,
-      "top1_rerank_score": null,
-      "embed_ms": 0.2,
-      "search_ms": 52.4,
-      "rerank_ms": 0.0,
+      "doc_rank": 2,
+      "top1_score": 0.4972,
+      "top1_rerank_score": 0.0733,
+      "embed_ms": 0.1,
+      "search_ms": 23.3,
+      "rerank_ms": 1026.2,
       "top5": [
         [
-          "pdf_009#A001",
-          0.684
+          "pdf_011#A008",
+          0.4972
         ],
         [
           "pdf_009#A000",
           0.6704
+        ],
+        [
+          "pdf_009#A001",
+          0.684
         ],
         [
           "pdf_004#A003",
@@ -839,10 +843,6 @@
         [
           "pdf_008#A007",
           0.5327
-        ],
-        [
-          "pdf_005#A005",
-          0.5275
         ]
       ]
     },
@@ -851,33 +851,33 @@
       "type": "spec_lookup",
       "lang": "en",
       "query": "What battery options are available for the HP ProBook 450 G10?",
-      "rank": 2,
+      "rank": 3,
       "doc_rank": 1,
-      "top1_score": 0.6922,
-      "top1_rerank_score": null,
-      "embed_ms": 0.2,
-      "search_ms": 38.0,
-      "rerank_ms": 0.0,
+      "top1_score": 0.674,
+      "top1_rerank_score": 0.6012,
+      "embed_ms": 0.1,
+      "search_ms": 24.3,
+      "rerank_ms": 931.4,
       "top5": [
         [
-          "pdf_010#A001",
-          0.6922
+          "pdf_010#A000",
+          0.674
+        ],
+        [
+          "pdf_001#A003",
+          0.5743
         ],
         [
           "pdf_010#A013",
           0.6881
         ],
         [
-          "pdf_010#A000",
-          0.674
+          "pdf_004#A002",
+          0.5526
         ],
         [
-          "pdf_010#A007",
-          0.6477
-        ],
-        [
-          "pdf_010#A008",
-          0.6458
+          "pdf_001#A004",
+          0.581
         ]
       ]
     },
@@ -886,33 +886,33 @@
       "type": "cross_lingual",
       "lang": "fr",
       "query": "Combien d'écrans externes peut-on brancher sur le Legion 5 ?",
-      "rank": 2,
+      "rank": 1,
       "doc_rank": 1,
-      "top1_score": 0.6379,
-      "top1_rerank_score": null,
-      "embed_ms": 0.2,
-      "search_ms": 24.8,
-      "rerank_ms": 0.0,
+      "top1_score": 0.634,
+      "top1_rerank_score": 0.6632,
+      "embed_ms": 0.1,
+      "search_ms": 36.0,
+      "rerank_ms": 1019.8,
       "top5": [
-        [
-          "pdf_005#A005",
-          0.6379
-        ],
         [
           "pdf_005#A002",
           0.634
         ],
         [
-          "pdf_005#A003",
-          0.626
-        ],
-        [
-          "pdf_005#A004",
-          0.6149
+          "pdf_005#A007",
+          0.5706
         ],
         [
           "pdf_005#A006",
           0.5897
+        ],
+        [
+          "pdf_005#A000",
+          0.584
+        ],
+        [
+          "pdf_007#A003",
+          0.5608
         ]
       ]
     },
@@ -924,30 +924,30 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.7378,
-      "top1_rerank_score": null,
-      "embed_ms": 0.9,
-      "search_ms": 23.8,
-      "rerank_ms": 0.0,
+      "top1_rerank_score": 0.9677,
+      "embed_ms": 0.2,
+      "search_ms": 34.1,
+      "rerank_ms": 998.7,
       "top5": [
         [
           "pdf_011#A014",
           0.7378
         ],
         [
-          "pdf_011#A013",
-          0.6906
-        ],
-        [
           "pdf_011#A015",
           0.6854
         ],
         [
-          "pdf_011#A001",
-          0.6788
+          "pdf_011#A013",
+          0.6906
         ],
         [
-          "pdf_011#A003",
-          0.6729
+          "pdf_011#A004",
+          0.6238
+        ],
+        [
+          "pdf_011#A011",
+          0.6382
         ]
       ]
     },
@@ -959,10 +959,10 @@
       "rank": 1,
       "doc_rank": 1,
       "top1_score": 0.6392,
-      "top1_rerank_score": null,
+      "top1_rerank_score": 0.117,
       "embed_ms": 0.1,
-      "search_ms": 20.7,
-      "rerank_ms": 0.0,
+      "search_ms": 34.7,
+      "rerank_ms": 1114.8,
       "top5": [
         [
           "pdf_011#A003",
@@ -973,16 +973,16 @@
           0.5927
         ],
         [
-          "pdf_011#A017",
-          0.5821
+          "pdf_011#A014",
+          0.5574
         ],
         [
-          "pdf_011#A006",
-          0.5759
+          "pdf_011#A002",
+          0.5756
         ],
         [
-          "pdf_011#A001",
-          0.5757
+          "pdf_011#A009",
+          0.5379
         ]
       ]
     },
@@ -993,31 +993,31 @@
       "query": "Quel est le prix de l'iPhone 16 en Tunisie ?",
       "rank": null,
       "doc_rank": null,
-      "top1_score": 0.5036,
-      "top1_rerank_score": null,
-      "embed_ms": 0.5,
-      "search_ms": 49.2,
-      "rerank_ms": 0.0,
+      "top1_score": 0.4494,
+      "top1_rerank_score": 0.0013,
+      "embed_ms": 0.1,
+      "search_ms": 21.4,
+      "rerank_ms": 1325.0,
       "top5": [
         [
-          "kb_034#A005",
-          0.5036
+          "kb_011#A026",
+          0.4494
         ],
         [
-          "kb_043#A048",
-          0.4848
+          "pdf_008#A008",
+          0.4495
         ],
         [
-          "kb_011#A012",
-          0.4802
+          "kb_011#A025",
+          0.449
         ],
         [
-          "kb_043#A030",
-          0.4757
+          "kb_021#A028",
+          0.4664
         ],
         [
-          "kb_043#A016",
-          0.4667
+          "kb_011#A013",
+          0.456
         ]
       ]
     },
@@ -1028,31 +1028,31 @@
       "query": "Comment remplacer l'écran cassé de mon téléphone ?",
       "rank": null,
       "doc_rank": null,
-      "top1_score": 0.6211,
-      "top1_rerank_score": null,
-      "embed_ms": 0.2,
-      "search_ms": 24.9,
-      "rerank_ms": 0.0,
+      "top1_score": 0.607,
+      "top1_rerank_score": 0.1065,
+      "embed_ms": 0.1,
+      "search_ms": 19.0,
+      "rerank_ms": 999.5,
       "top5": [
-        [
-          "kb_043#A043",
-          0.6211
-        ],
         [
           "kb_043#A045",
           0.607
+        ],
+        [
+          "kb_043#A043",
+          0.6211
         ],
         [
           "kb_043#A044",
           0.5773
         ],
         [
-          "kb_021#A010",
-          0.5654
+          "kb_043#A040",
+          0.5537
         ],
         [
-          "kb_043#A042",
-          0.5577
+          "kb_043#A024",
+          0.5545
         ]
       ]
     },
@@ -1063,43 +1063,43 @@
       "query": "What is the best pizza place in Tunis?",
       "rank": null,
       "doc_rank": null,
-      "top1_score": 0.3282,
-      "top1_rerank_score": null,
-      "embed_ms": 0.2,
-      "search_ms": 21.8,
-      "rerank_ms": 0.0,
+      "top1_score": 0.2855,
+      "top1_rerank_score": 0.0004,
+      "embed_ms": 0.1,
+      "search_ms": 22.6,
+      "rerank_ms": 1025.9,
       "top5": [
+        [
+          "kb_021#A019",
+          0.2855
+        ],
+        [
+          "kb_030#A024",
+          0.291
+        ],
+        [
+          "kb_022#A025",
+          0.2899
+        ],
+        [
+          "kb_022#A017",
+          0.2878
+        ],
         [
           "kb_034#A005",
           0.3282
-        ],
-        [
-          "kb_027#A003",
-          0.3251
-        ],
-        [
-          "pdf_011#A003",
-          0.3123
-        ],
-        [
-          "kb_027#A016",
-          0.3064
-        ],
-        [
-          "kb_027#A015",
-          0.2982
         ]
       ]
     }
   ],
   "metrics": {
     "overall": {
-      "hit@1": 0.714,
-      "hit@3": 0.893,
-      "hit@5": 0.929,
-      "hit@10": 0.964,
-      "mrr": 0.81,
-      "doc_hit@5": 0.929,
+      "hit@1": 0.821,
+      "hit@3": 1.0,
+      "hit@5": 1.0,
+      "hit@10": 1.0,
+      "mrr": 0.905,
+      "doc_hit@5": 1.0,
       "n": 28
     },
     "by_type": {
@@ -1113,20 +1113,20 @@
         "n": 3
       },
       "cross_lingual": {
-        "hit@1": 0.667,
+        "hit@1": 1.0,
         "hit@3": 1.0,
         "hit@5": 1.0,
         "hit@10": 1.0,
-        "mrr": 0.833,
+        "mrr": 1.0,
         "doc_hit@5": 1.0,
         "n": 3
       },
       "definition": {
         "hit@1": 0.857,
-        "hit@3": 0.857,
+        "hit@3": 1.0,
         "hit@5": 1.0,
         "hit@10": 1.0,
-        "mrr": 0.886,
+        "mrr": 0.929,
         "doc_hit@5": 1.0,
         "n": 7
       },
@@ -1135,32 +1135,37 @@
         "hit@3": 1.0,
         "hit@5": 1.0,
         "hit@10": 1.0,
-        "mrr": 0.833,
+        "mrr": 0.806,
         "doc_hit@5": 1.0,
         "n": 6
       },
       "use_case": {
-        "hit@1": 0.667,
-        "hit@3": 0.778,
-        "hit@5": 0.778,
-        "hit@10": 0.889,
-        "mrr": 0.72,
-        "doc_hit@5": 0.778,
+        "hit@1": 0.889,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "hit@10": 1.0,
+        "mrr": 0.944,
+        "doc_hit@5": 1.0,
         "n": 9
       }
     },
     "out_of_scope": {
-      "oos_top1_max": 0.6211,
-      "oos_top1_mean": 0.484,
-      "in_scope_top1_min": 0.5715,
-      "in_scope_top1_mean": 0.691,
-      "correct_top1_min": 0.5715,
-      "in_scope_rejected_at_oos_max": 0.071
+      "oos_top1_max": 0.607,
+      "oos_top1_mean": 0.447,
+      "in_scope_top1_min": 0.4259,
+      "in_scope_top1_mean": 0.664,
+      "correct_top1_min": 0.4259,
+      "in_scope_rejected_at_oos_max": 0.179
     },
     "latency_ms": {
-      "embed_mean": 0.3,
-      "search_mean": 49.9,
-      "rerank_mean": 0.0
+      "embed_mean": 0.1,
+      "search_mean": 30.5,
+      "rerank_mean": 1078.1
+    },
+    "out_of_scope_rerank": {
+      "oos_top1_max": 0.1065,
+      "in_scope_top1_min": 0.0733,
+      "in_scope_rejected_at_oos_max": 0.036
     }
   }
 }
