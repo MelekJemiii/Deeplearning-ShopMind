@@ -1,6 +1,6 @@
 services:
   qdrant:
-    image: qdrant/qdrant:${QDRANT_VERSION:-latest}
+    image: qdrant/qdrant:${QDRANT_VERSION:?set QDRANT_VERSION in .env}
     restart: unless-stopped
     ports:
       - "6333:6333"
@@ -10,7 +10,7 @@ services:
       - QDRANT__SERVICE__API_KEY=${QDRANT_API_KEY:-}
 
   ollama:
-    image: ollama/ollama:${OLLAMA_VERSION:-latest}
+    image: ollama/ollama:${OLLAMA_VERSION:?set OLLAMA_VERSION in .env}
     restart: unless-stopped
     ports:
       - "11434:11434"
@@ -41,7 +41,7 @@ services:
       - ollama
 
   n8n:
-    image: n8nio/n8n:${N8N_VERSION:-latest}
+    image: n8nio/n8n:${N8N_VERSION:?set N8N_VERSION in .env}
     restart: unless-stopped
     ports:
       - "5678:5678"
