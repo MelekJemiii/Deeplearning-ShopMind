@@ -97,8 +97,13 @@ vector_store:
   payload_indexes: [doc_id, source_type, device_category, language, topic]   # fields usable as filters
   upsert_batch_size: 128
 
-retrieval:
+retrieval:                       # used by the retrieval API (what the n8n RAG Agent calls)
+  provider: ollama                 # must match the provider used to index the collection
+  strategy: B                      # selected by evaluation: MRR 0.88 vs 0.81 (eval/results/summary.md)
   top_k: 5
+  max_top_k: 10
+  min_score: 0.45                  # below this, a chunk is dropped (evaluation: clearly unrelated queries ~0.32)
+  filterable_fields: [device_category, source_type, language, doc_id, topic]
 
 evaluation:
   k_values: [1, 3, 5, 10]        # Hit@k reported for each; MRR computed over the top max(k)

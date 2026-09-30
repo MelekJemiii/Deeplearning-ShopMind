@@ -7,7 +7,6 @@ services:
     volumes:
       - ./qdrant_storage:/qdrant/storage
     environment:
-      - OLLAMA_KEEP_ALIVE=24h 
       - QDRANT__SERVICE__API_KEY=${QDRANT_API_KEY:-}
 
   ollama:
@@ -17,6 +16,8 @@ services:
       - "11434:11434"
     volumes:
       - ./ollama_data:/root/.ollama     # downloaded models persist across restarts
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h           # keep bge-m3 loaded: avoids a ~25 s cold start on the first query
     # NVIDIA GPU (needs an NVIDIA driver on the host). Remove this block to run on CPU only.
     deploy:
       resources:
@@ -25,6 +26,19 @@ services:
             - driver: nvidia
               count: all
               capabilities: [gpu]
+
+  rag-api:                              # KB retrieval API used by the n8n RAG Agent
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - QDRANT_URL=http://qdrant:6333
+      - QDRANT_API_KEY=${QDRANT_API_KEY:-}
+      - OLLAMA_URL=http://ollama:11434
+    depends_on:
+      - qdrant
+      - ollama
 
   n8n:
     image: n8nio/n8n:${N8N_VERSION:-latest}
@@ -40,4 +54,5 @@ services:
     depends_on:
       - qdrant
       - ollama
-# Inside n8n, reach services by name: Qdrant http://qdrant:6333, Ollama http://ollama:11434 (not localhost).
+      - rag-api
+# Inside n8n, reach services by name: rag-api http://rag-api:8000, Qdrant http://qdrant:6333, Ollama http://ollama:11434.

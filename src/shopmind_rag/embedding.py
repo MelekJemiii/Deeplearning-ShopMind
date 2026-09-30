@@ -96,8 +96,11 @@ class Embedder:
     def embed_documents(self, items: list[tuple[str, str]]) -> np.ndarray:
         return self._embed([self.format_document(t, x) for t, x in items])
 
-    def embed_query(self, query: str) -> np.ndarray:
-        return self._embed([self.format_query(query)])[0]
+    def embed_query(self, query: str, use_cache: bool = True) -> np.ndarray:
+        text = self.format_query(query)
+        if not use_cache:  # online serving: no disk writes per request
+            return np.array(self._call_with_retry([text])[0], dtype=np.float32)
+        return self._embed([text])[0]
 
     def _embed(self, texts: list[str]) -> np.ndarray:
         todo = [t for t in dict.fromkeys(texts) if self.cache.get(t) is None]

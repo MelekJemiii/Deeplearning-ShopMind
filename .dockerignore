@@ -1,0 +1,10 @@
+.venv
+.git
+data
+eval
+logs
+qdrant_storage
+ollama_data
+n8n_data
+.env
+**/__pycache__

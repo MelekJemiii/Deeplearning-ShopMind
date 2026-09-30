@@ -7,3 +7,7 @@ tiktoken>=0.7            # token counting (same tokenizer as the embedding model
 google-genai>=1.0           # Gemini embeddings
 qdrant-client>=1.10         # vector store client
 numpy>=1.26
+fastapi>=0.110             # retrieval API
+uvicorn[standard]>=0.29
+pytest>=8.0
+httpx>=0.27                # FastAPI TestClient

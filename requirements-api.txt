@@ -1,0 +1,9 @@
+# Minimal runtime dependencies of the retrieval API container (no PDF / chunking libs)
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+pyyaml>=6.0
+python-dotenv>=1.0
+requests>=2.32
+numpy>=1.26
+qdrant-client>=1.10

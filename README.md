@@ -31,6 +31,7 @@ docker compose exec ollama ollama pull bge-m3   # once: download the embedding m
 | 4. Chunk (A + B) | `python scripts/06_chunk.py` | `data/chunks/chunks_{A,B}.jsonl`, `stats_{A,B}.json` |
 | 5. Embed + index | `python scripts/07_embed_index.py` | Qdrant collections `shopmind_kb_<provider>_<A|B>` |
 | 6. Evaluate retrieval | `python scripts/08_evaluate.py` | `eval/results/summary.md` + per-run JSON/CSV |
+| 7. Retrieval API | `docker compose up -d --build rag-api` | `POST http://localhost:8000/search` (docs: `/docs`) |
 | 3. Chunk | *(next step)* | `data/processed/` |
 | 4. Embed + index | *(next step)* | Qdrant collections |
 | 5. Evaluate | *(next step)* | `eval/results/` |
@@ -43,3 +44,8 @@ All parameters (paths, chunk sizes, models, top-k) live in `config/settings.yaml
 - `pymupdf4llm` / PyMuPDF is **AGPL-3.0**: fine for the academic project. For a commercial closed-source deployment,
   either buy a PyMuPDF commercial license or switch the converter to an MIT/Apache tool (e.g. pdfplumber, docling).
   The conversion is isolated in `scripts/03_convert_pdfs.py`, so swapping it does not affect the rest of the pipeline.
+
+## Tests
+```bash
+pytest -q          # API tests run without any service (fake embedder + local Qdrant)
+```
