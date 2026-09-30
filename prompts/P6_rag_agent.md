@@ -4,9 +4,11 @@
 Recommendation Agent needs to justify its choice. It never recommends a product.
 **Type:** n8n AI Agent (tools agent) — decides which questions to ask, which part of the KB to
 search, judges results, retries or stops. Not a single LLM call.
-**Model:** Gemini Flash (`gemini-3.8-flash`), temperature 0, Max Iterations 10, Retry On Fail (3 × 5 s).
+**Model:** Groq `openai/gpt-oss-120b` (primary) with Gemini Flash `gemini-3.8-flash` as fallback, temperature 0,
+Max Iterations 10, Retry On Fail (3 × 5 s). See "Model configuration history" for why the order changed.
 **Tool:** `search_knowledge_base(query, source_type, device_category)` → Retrieval API
-(`POST /search`, bge-m3 + Qdrant, collection `shopmind_kb_ollama_B`, min_score 0.45).
+(`POST /search`: bge-m3 dense top 20 → bge-reranker-v2-m3 top 5, collection `shopmind_kb_ollama_B`,
+reranker-score floor 0.05).
 **Techniques:** role prompting, explicit plan→act→observe procedure, tool use with filters chosen by the
 model (`$fromAI`), search budget, scope declaration (what the KB does NOT contain), grounding with
 citations, wording-strength preservation, injection guardrail, structured output (parser),
@@ -24,7 +26,9 @@ deterministic post-validation in code.
 | v4 | KB scope declared (no prices/stock/repairs → `not_found` without searching); STOP as soon as answered; budget 2 per question / 4 total; Max Iterations 6 → 10 | T2: 3 searches for 1 question (F5); T3: max iterations reached on unanswerable question (F6) |
 | validation v1 | Code node: removes facts citing chunks not returned by the tool; recomputes status; measures real searches | F2, F4 risk (invented citations); self-reported `searches_made` unreliable |
 | validation v2 | Summary built by code from verified facts only (LLM summary kept for audit) | F3 and F7: summary drifted twice despite an explicit prompt rule |
-| validation v3 | Facts removed if a number is absent from the cited chunk (normalized: 15,6=15.6, 3 500=3500) | Wrong specs are the most harmful hallucination for a shopping assistant; F3/F7 showed LLM text drifts |
+| validation v3 | Facts removed if a number is absent from the cited chunk (normalized: 15,6=15.6, 3 500=3500) | Wrong specs are the most harmful hallucination for a shopping assistant |
+| validation v4 | `model_used` field: which chat model(s) answered (`mixed` when the fallback ran on some steps) | Fallback is applied per LLM call, so one run can mix models; evaluation must not hide it |
+
 ---
 
 ## Failures observed and fixes
@@ -40,6 +44,11 @@ deterministic post-validation in code.
 | 2026-09-30 | T3 | Validation false alarm (one_search_per_question=false when skipping out-of-scope) | Check counts answered questions only | validation v2 |
 | 2026-09-30 | T2 (v4) | F7: summary adds "à pleine puissance en jeu" (not in source) | Summary built from verified facts | validation v2 |
 | 2026-09-30 | — | Preview model quota (20 requests) exhausted; `gemini-2.5-flash` deprecated (404) | `gemini-3.8-flash` + Retry On Fail | config |
+| 2026-09-30 | End-to-end evaluation | Gemini daily quota exhausted (each query = 2–5 LLM calls) | Groq `gpt-oss-120b` added as fallback; T1–T4 re-run on it: 4/4 | config |
+| 2026-09-30 | T2 on gpt-oss-120b | F8: fact copied verbatim in English despite "write facts in the customer's language" | Kept: verbatim is safer than paraphrase; final answer language handled by the Recommendation Agent | observed |
+| 2026-09-30 | q10, q18, q19 (evaluation) | F9: runs took 6–11 min. Gemini (primary) overloaded (503), ~40 s per failed call, fallback applied per step → every step paid the failure delay | Groq made primary (≈5 s/query), Gemini moved to fallback | config |
+| 2026-09-30 | Evaluation | Webhook kept running the old workflow after edits | Rule: republish after every edit (production webhooks run the published version) | process |
+| 2026-09-30 | q18 "How does wireless charging work?" (evaluation) | F10: partial answer (benefits, Qi, efficiency) without the mechanism (induction); agent stopped on a related-but-incomplete result | Not fixed. Candidate v5 rule: "a result answers only if it addresses what the question asks (how / why / what)" | observed |
 
 ---
 
@@ -52,9 +61,53 @@ deterministic post-validation in code.
 | T3 | "Prix de l'iPhone 16 en Tunisie ?" | 0 | `not_found`, no invented price | ✅ |
 | T4 | Laptop gaming, quel écran ? | 2 (`team_written`) | "144 Hz ou plus" from `guide_003` — **the query pure retrieval missed (q06, rank >10) is answered because the agent chose the guide filter** | ✅ (2nd search redundant) |
 
+The same four tests pass on Groq `openai/gpt-oss-120b` (T4 with 1 search instead of 2; T2 fact copied
+in English, see F8).
+
 **Key finding:** on q06, static top-k retrieval returned only Wikipedia "Refresh rate" chunks; the
 agent's own decision to filter on buying guides retrieved the answer. Agentic retrieval fixed a
 failure that chunking alone could not.
+
+---
+
+## End-to-end evaluation (31 test queries, `openai/gpt-oss-120b`)
+
+Script: `scripts/09_evaluate_agent.py` (webhook, Router bypassed: measures this agent alone).
+Full results: `eval/agent_results/summary.md`.
+
+| Metric | Result |
+|---|---|
+| In-scope: cited the labeled relevant document | 26/28 (93%) |
+| After manual review of the 2 misses | 27/28 correct or valid, 1 partial (q18), 0 wrong |
+| In-scope: wrongly returned `not_found` | 0/28 |
+| Out-of-scope: correctly refused | 3/3, with 0 searches |
+| Invented citations / wrong numbers reaching the output | 0 / 0 |
+| Tool calls per query | 1.13 mean |
+| Latency | 7.1 s mean, 22.8 s max |
+
+**Source chosen by the agent, per query type** (evidence of agentic decisions — no routing is hard-coded):
+use_case → `team_written` 12/12 · spec_lookup → `manufacturer_pdf` 6/6 · cross_lingual → `manufacturer_pdf` 3/3 ·
+definition → `any` / `wikipedia` mostly.
+
+**Reviewed misses:** q15 (CUDA) cites two other articles that correctly answer (label listed one document only);
+q18 (wireless charging) is grounded but misses the mechanism (F10). Definitions are the weakest type (5/7
+strict) because the same concept appears in several articles while the test set labels one.
+
+---
+
+## Model configuration history
+
+| Stage | Configuration | Why it changed |
+|---|---|---|
+| 1 | `gemini-3-flash-preview` | Preview quota (20 requests) exhausted after ~5 runs |
+| 2 | `gemini-2.5-flash` | Deprecated for new users (404) |
+| 3 | `gemini-3.8-flash` | Daily free quota exhausted during evaluation |
+| 4 | Gemini primary + Groq `gpt-oss-120b` fallback | When Gemini was overloaded, each step waited ~40 s before falling back (F9) |
+| 5 (current) | **Groq `gpt-oss-120b` primary + Gemini fallback** | Fastest reliable model first; the fallback covers Groq's own limits |
+
+**Lesson:** a fallback only helps if the primary fails fast. The model order is chosen from measured latency
+and reliability, and the guardrails (citation + number checks) are model-independent, which is what made the
+switch safe.
 
 ---
 
@@ -128,6 +181,9 @@ Customer language: {{ $json.language }}
 ```
 
 ## Known limitations
-- Occasional redundant second search even after an answer is found (T4); within budget.
-- Minor paraphrase drift in facts ("32 Go idéalement" vs source "confortable"); the fact text is
-  LLM-written, only the chunk_id is verified. The Verification Agent should compare facts to chunks.
+- Occasional redundant second search even after an answer is found (T4 on Gemini); within budget.
+- Fact wording is LLM-written: chunk_id and numbers are verified in code, wording strength is not
+  (e.g. "32 Go idéalement" vs source "confortable"). The Verification Agent should compare facts to chunks.
+- Completeness is not checked: an answer can be grounded but partial (q18).
+- Planning depends on the model: for the same request, Gemini asked about RAM + GPU, gpt-oss about RAM + CPU.
+- Free-tier LLM APIs limit how many runs fit in a day; production would need a paid tier or a local model.
