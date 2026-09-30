@@ -1,0 +1,94 @@
+{
+  "n_queries": 31,
+  "n_ok": 31,
+  "errors": [],
+  "in_scope": {
+    "n": 28,
+    "answered_rate": 1.0,
+    "retrieved_relevant_doc_rate": 0.929,
+    "cited_relevant_doc_rate": 0.929,
+    "false_abstention_rate": 0.0
+  },
+  "out_of_scope": {
+    "n": 3,
+    "correct_abstention_rate": 1.0,
+    "answered_ids": []
+  },
+  "behavior": {
+    "tool_calls_mean": 1.13,
+    "one_search_per_question_rate": 0.964,
+    "source_type_by_query_type": {
+      "use_case": {
+        "team_written": 12
+      },
+      "compatibility": {
+        "team_written": 2,
+        "any": 1,
+        "manufacturer_pdf": 1
+      },
+      "definition": {
+        "any": 5,
+        "wikipedia": 2,
+        "team_written": 3
+      },
+      "spec_lookup": {
+        "manufacturer_pdf": 6
+      },
+      "cross_lingual": {
+        "manufacturer_pdf": 3
+      }
+    }
+  },
+  "guardrails": {
+    "invalid_citations_removed": 0,
+    "number_mismatch_facts_removed": 0,
+    "queries_with_a_removal": []
+  },
+  "by_type": {
+    "compatibility": {
+      "n": 3,
+      "cited_relevant_doc_rate": 1.0,
+      "answered_rate": 1.0
+    },
+    "cross_lingual": {
+      "n": 3,
+      "cited_relevant_doc_rate": 1.0,
+      "answered_rate": 1.0
+    },
+    "definition": {
+      "n": 7,
+      "cited_relevant_doc_rate": 0.714,
+      "answered_rate": 1.0
+    },
+    "spec_lookup": {
+      "n": 6,
+      "cited_relevant_doc_rate": 1.0,
+      "answered_rate": 1.0
+    },
+    "use_case": {
+      "n": 9,
+      "cited_relevant_doc_rate": 1.0,
+      "answered_rate": 1.0
+    }
+  },
+  "latency_s": {
+    "mean": 7.1,
+    "max": 22.8
+  },
+  "models_used": {
+    "fallback: groq openai/gpt-oss-120b": 31
+  },
+  "per_model": {
+    "fallback: groq openai/gpt-oss-120b": {
+      "n": 31,
+      "n_in_scope": 28,
+      "n_out_of_scope": 3,
+      "cited_relevant_doc_rate": 0.929,
+      "false_abstention_rate": 0.0,
+      "correct_abstention_rate": 1.0,
+      "tool_calls_mean": 1.13,
+      "guardrail_removals": 0,
+      "latency_mean_s": 7.1
+    }
+  }
+}
