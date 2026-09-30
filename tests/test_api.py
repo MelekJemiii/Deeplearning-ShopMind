@@ -20,6 +20,7 @@ def client(tmp_path_factory):
     from shopmind_rag.embedding import get_embedder
     from shopmind_rag.vectorstore import collection_name, get_client, recreate, upsert
     SETTINGS["retrieval"]["provider"] = "fake"
+    SETTINGS["retrieval"]["rerank"] = False   # base tests: first-stage retrieval only
     chunks = [
         {"chunk_id": "g1#B000", "doc_id": "g1", "title": "Guide data science", "heading_path": ["Guide", "RAM"],
          "source_type": "team_written", "source_url": "", "device_category": "laptop", "language": "fr",
@@ -94,3 +95,16 @@ def test_hybrid_search_ranks_exact_token(tmp_path):
     assert hits[0]["chunk_id"] == "d0"
     assert -1.0 <= hits[0]["score"] <= 1.0 and "fusion_score" in hits[0]
     qc.close()
+
+
+def test_rerank_mode_filters_on_rerank_score(client):
+    from shopmind_rag import api
+    from shopmind_rag.rerank import FakeReranker
+    api.STATE["reranker"] = FakeReranker()
+    try:
+        r = client.post("/search", json={"query": "RAM data science", "min_score": 0}).json()
+        assert r["results"][0]["chunk_id"] == "g1#B000" and r["results"][0]["rerank_score"] > 0
+        # chunks with no word overlap get rerank_score 0 < min_rerank_score -> dropped
+        assert all(x["rerank_score"] >= api.RCFG["min_rerank_score"] for x in r["results"])
+    finally:
+        api.STATE["reranker"] = None

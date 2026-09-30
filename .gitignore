@@ -16,6 +16,7 @@ data/embeddings/**
 qdrant_storage/
 n8n_data/
 ollama_data/
+tei_data/
 # OS / IDE
 .DS_Store
 Thumbs.db

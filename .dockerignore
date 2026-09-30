@@ -8,3 +8,4 @@ ollama_data
 n8n_data
 .env
 **/__pycache__
+tei_data

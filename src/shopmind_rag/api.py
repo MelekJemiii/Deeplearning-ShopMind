@@ -18,6 +18,7 @@ from .config import SETTINGS
 from .embedding import get_embedder
 from .logging_utils import get_logger
 from . import sparse
+from .rerank import get_reranker
 from .vectorstore import collection_name, get_client, search, search_hybrid
 
 log = get_logger("api")
@@ -51,7 +52,11 @@ class Chunk(BaseModel):
     source_type: str
     source_url: str
     score: float
+    rerank_score: float | None = None
     text: str
+
+
+DEFAULTS = {"heading_path": [], "rerank_score": None}
 
 
 class SearchResponse(BaseModel):
@@ -67,6 +72,7 @@ async def lifespan(app: FastAPI):
     STATE["embedder"] = get_embedder(RCFG["provider"])
     STATE["client"] = get_client()
     STATE["mode"] = RCFG.get("mode", "dense")
+    STATE["reranker"] = get_reranker() if RCFG.get("rerank") else None
     STATE["collection"] = collection_name(RCFG["strategy"], RCFG["provider"], STATE["mode"])
     try:  # warm-up: loads the embedding model now instead of on the first user query
         STATE["embedder"].embed_query("warm-up", use_cache=False)
@@ -87,6 +93,7 @@ def health():
     except Exception as e:
         raise HTTPException(503, f"vector store unavailable: {e}")
     return {"status": "ok" if points else "degraded", "collection": name, "points": points, "mode": STATE["mode"],
+            "rerank": bool(STATE["reranker"]),
             "embedding": {"provider": RCFG["provider"], "model": STATE["embedder"].model}}
 
 
@@ -102,15 +109,26 @@ def search_kb(req: SearchRequest):
         value = getattr(req, field)
         if value != "any":
             flt[field] = [value]
+    n = max(req.top_k, SETTINGS["rerank"]["candidates"]) if STATE["reranker"] else req.top_k
     if STATE["mode"] == "hybrid":
-        hits = search_hybrid(STATE["client"], STATE["collection"], vec, sparse.query_vector(req.query), req.top_k,
-                             SETTINGS["hybrid"]["prefetch_k"], flt or None)
+        hits = search_hybrid(STATE["client"], STATE["collection"], vec, sparse.query_vector(req.query), n,
+                             max(n, SETTINGS["hybrid"]["prefetch_k"]), flt or None)
     else:
-        hits = search(STATE["client"], STATE["collection"], vec, req.top_k, flt or None)
-    kept = [h for h in hits if h["score"] >= req.min_score]
+        hits = search(STATE["client"], STATE["collection"], vec, n, flt or None)
+    if STATE["reranker"]:
+        try:
+            hits = STATE["reranker"].rerank(req.query, hits, req.top_k)
+        except Exception as e:  # reranker down: degrade gracefully to first-stage order
+            log.warning("rerank failed, using first-stage ranking: %s", e)
+            hits = hits[:req.top_k]
+    if STATE["reranker"] and all("rerank_score" in h for h in hits):
+        # reranked: filter on the cross-encoder score (evaluation: it separates out-of-scope queries, cosine does not)
+        kept = [h for h in hits if h["rerank_score"] >= RCFG["min_rerank_score"]]
+    else:
+        kept = [h for h in hits if h["score"] >= req.min_score]
     ms = round(1000 * (time.perf_counter() - t0), 1)
     log.info("search %r filters=%s -> %d/%d kept (%.0f ms)", req.query[:60], flt, len(kept), len(hits), ms)
     return SearchResponse(query=req.query, collection=STATE["collection"],
-                          results=[Chunk(**{k: h.get(k, "" if k != "heading_path" else []) for k in Chunk.model_fields}
+                          results=[Chunk(**{k: h.get(k, DEFAULTS.get(k, "")) for k in Chunk.model_fields}
                                          | {"score": round(h["score"], 4)}) for h in kept],
                           dropped_below_min_score=len(hits) - len(kept), latency_ms=ms)

@@ -32,6 +32,7 @@ docker compose exec ollama ollama pull bge-m3   # once: download the embedding m
 | 5. Embed + index | `python scripts/07_embed_index.py` | Qdrant collections `shopmind_kb_<provider>_<A|B>` |
 | 6. Evaluate retrieval | `python scripts/08_evaluate.py` | `eval/results/summary.md` + per-run JSON/CSV |
 | 6b. Hybrid (dense + BM25) | `python scripts/07_embed_index.py --hybrid` then `python scripts/08_evaluate.py --strategies A B --modes dense hybrid` | `*_hybrid` collections, 4-run comparison |
+| 6c. Reranking | `docker compose up -d reranker` then `python scripts/08_evaluate.py --strategies B --modes dense hybrid dense_rerank hybrid_rerank` | 4-run comparison incl. cross-encoder |
 | 7. Retrieval API | `docker compose up -d --build rag-api` | `POST http://localhost:8000/search` (docs: `/docs`) |
 | 3. Chunk | *(next step)* | `data/processed/` |
 | 4. Embed + index | *(next step)* | Qdrant collections |
